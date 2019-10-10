@@ -1,0 +1,10 @@
+<%= simple_form_for article do |f| %>
+<%= f.input :title %>
+<%= f.input :dynasty %>
+<%= f.input :author %>
+<%= f.input :prelude %>
+<%= f.input :content %>
+<%= f.input :explanation %>
+
+<%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,27 @@
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center">东坡词旷，稼轩词豪</h1>
+    </div>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <table class="table">
+        <thead>
+        <tr>
+        <td>title</td>
+        <td>Author</td>
+        <td>type</td>
+        </tr>
+        </thead>
+        <% @works.each do |work| %>
+          <tr>
+          <td><%= link_to work.title, work_path(work.id) %></td>
+          <td><%= work.author %></td>
+          <td><%= work.type %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

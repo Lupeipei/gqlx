@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="d-flex justify-content-end mb-3">
+        <div>
+          <%= link_to '新建宋词', new_backend_song_poem_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+        <tr>
+        <td>title</td>
+        <td>Author</td>
+        <td>type</td>
+        </tr>
+        </thead>
+        <% @song_poems.each do |song_poem| %>
+          <tr>
+          <td><%= link_to song_poem.title, backend_song_poems_path(song_poem.id) %></td>
+          <td><%= song_poem.author %></td>
+          <td><%= song_poem.type %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

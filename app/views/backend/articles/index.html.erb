@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="d-flex justify-content-end mb-3">
+        <div>
+          <%= link_to '新建文章', new_backend_article_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+        <tr>
+        <td>title</td>
+        <td>Author</td>
+        <td>type</td>
+        </tr>
+        </thead>
+        <% @articles.each do |article| %>
+          <tr>
+          <td><%= link_to article.title, backend_articles_path(article.id) %></td>
+          <td><%= article.author %></td>
+          <td><%= article.type %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
