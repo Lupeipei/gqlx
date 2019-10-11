@@ -7,6 +7,7 @@ ruby '2.4.0'
 gem 'rails', '~> 5.2.3'
 gem 'sqlite3'
 gem 'puma', '~> 3.11'
+gem 'rails-i18n', '~> 5.1'
 
 # view
 gem 'sass-rails', '~> 5.0'

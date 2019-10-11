@@ -1,0 +1,31 @@
+zh-CN:
+  activerecord:
+    models:
+      work: 作品
+      song_poem: 宋词
+      article: 文章
+    attributes:
+      work:
+        title: 标题
+        dynasty: 朝代
+        author: 作者
+        prelude: 引
+        type: 类型
+        content: 内容
+        explanation: 释
+      song_poem:
+        title: 词牌名
+        dynasty: 朝代
+        author: 作者
+        prelude: 引
+        type: 类型
+        content: 内容
+        explanation: 释
+      article:
+        title: 标题
+        dynasty: 朝代
+        author: 作者
+        prelude: 引
+        type: 类型
+        content: 内容
+        explanation: 释
