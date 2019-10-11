@@ -1,27 +1,23 @@
   <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4 text-center">东坡词旷，稼轩词豪</h1>
+    <div class="container text-dark text-center">
+      <h1 class="display-4">东坡之词旷，稼轩之词豪</h1>
+      <p class="float-right">王国维 - 《人间词话》</p>
     </div>
   </div>
+
+<h2 class="category">宋词</h2>
 <div class="container">
   <div class="row">
-    <div class="col-md-10 offset-md-1">
-      <table class="table">
-        <thead>
-        <tr>
-        <td>title</td>
-        <td>Author</td>
-        <td>type</td>
-        </tr>
-        </thead>
-        <% @works.each do |work| %>
-          <tr>
-          <td><%= link_to work.title, work_path(work.id) %></td>
-          <td><%= work.author %></td>
-          <td><%= work.type %></td>
-          </tr>
-        <% end %>
-      </table>
-    </div>
+    <% @works.each do |work| %>
+      <div class="col-4 poem">
+        <div class="card card-body">
+          <h5 class="card-title text-success"><%= work.title %></h5>
+          <small class="card-subtitle mb-2 text-muted"><%= work.dynasty %> - <%= work.author %></small>
+          <p class="card-text">
+            <%= work.content %>
+          </p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
