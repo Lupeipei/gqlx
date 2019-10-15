@@ -15,17 +15,3 @@ zh-CN:
         explanation: 释
       song_poem:
         title: 词牌名
-        dynasty: 朝代
-        author: 作者
-        prelude: 引
-        type: 类型
-        content: 内容
-        explanation: 释
-      article:
-        title: 标题
-        dynasty: 朝代
-        author: 作者
-        prelude: 引
-        type: 类型
-        content: 内容
-        explanation: 释
