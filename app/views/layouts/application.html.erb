@@ -45,9 +45,11 @@
 
         <div>
           <% flash.each do |key, value| %>
-            <div class="<%= flash_class(key)%>">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <div class="<%= flash_class(key)%> alert-dismissible fade show">
               <%= value %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
           <% end %>
           <%= yield %>

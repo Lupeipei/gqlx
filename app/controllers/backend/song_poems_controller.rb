@@ -11,8 +11,10 @@ class Backend::SongPoemsController < ApplicationController
   def create
     @song_poem = SongPoem.new(song_poem_params)
     if @song_poem.save
+      flash[:notice] = "created success!"
       redirect_to works_path
     else
+      flash[:alert] = "something wrong!"
       render :new
     end
   end
