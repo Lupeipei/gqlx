@@ -1,10 +1,14 @@
-<%= simple_form_for [ :backend, song_poem ] do |f| %>
-<%= f.input :title %>
-<%= f.input :dynasty %>
-<%= f.input :author %>
-<%= f.input :prelude %>
-<%= f.input :content %>
-<%= f.input :explanation %>
+<div class="row">
+  <div class="col-lg-8 offset-md-2">
+    <%= simple_form_for [ :backend, song_poem ] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :dynasty %>
+    <%= f.input :author %>
+    <%= f.input :prelude %>
+    <%= f.input :content %>
+    <%= f.input :explanation %>
 
-<%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,5 @@
-@import "~bootstrap/scss/bootstrap.scss";
-
-
+@import '../bootstrap/index.scss';
+ 
 html {
   height: 100%;
 }
@@ -23,7 +22,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('../statics/images/mythical-l.jpg');
+  background: url('../images/mythical-l.jpg');
   background-size: 100% 100%;
 }
 

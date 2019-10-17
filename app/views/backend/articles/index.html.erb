@@ -1,24 +1,31 @@
+<h2><%= I18n.t 'pages.index', model: h(Article), scope: :views %></h2>
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1">
       <div class="d-flex justify-content-end mb-3">
-        <div>
-          <%= link_to '新建文章', new_backend_article_path, class: "btn btn-primary" %>
-        </div>
+        <%= link_to new_backend_article_path, class: "btn btn-primary" do %>
+          <%= I18n.t 'pages.new', model: h(Article), scope: :views %>
+        <% end %>
       </div>
       <table class="table">
         <thead>
         <tr>
-        <td>title</td>
-        <td>Author</td>
-        <td>type</td>
+        <td><%= h SongPoem, :title %></td>
+        <td><%= h SongPoem, :dynasty %></td>
+        <td><%= h SongPoem, :author %></td>
+        <td>操作</td>
         </tr>
         </thead>
         <% @articles.each do |article| %>
           <tr>
-          <td><%= link_to article.title, backend_articles_path(article.id) %></td>
+          <td><%= link_to article.title, [ :backend, article ] %></td>
+          <td><%= article.dynasty %></td>
           <td><%= article.author %></td>
-          <td><%= article.type %></td>
+          <td>
+            <%= link_to "编辑", [ :edit, :backend, article ] %>
+            <%= link_to "删除", [ :backend, article ], method: :delete, data: { confirm: "确定删除#{song_poem.title}？"} %>
+          </td>
           </tr>
         <% end %>
       </table>

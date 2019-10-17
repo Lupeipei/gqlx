@@ -3,7 +3,8 @@ zh-CN:
     models:
       work: 作品
       song_poem: 宋词
-      article: 文章
+      article: 文集
+      admin: 管理员
     attributes:
       work:
         title: 标题
@@ -15,3 +16,6 @@ zh-CN:
         explanation: 释
       song_poem:
         title: 词牌名
+      admin:
+        name: 姓名
+        email: 邮箱

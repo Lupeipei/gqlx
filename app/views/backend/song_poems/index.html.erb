@@ -1,3 +1,6 @@
+<h2><%= I18n.t 'pages.index', model: h(SongPoem), scope: :views %></h2>
+
+
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
   <strong>Holy guacamole!</strong> You should check in on some of those fields below.
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -9,9 +12,9 @@
   <div class="row">
     <div class="col-md-10 offset-md-1">
       <div class="d-flex justify-content-end mb-3">
-        <div>
-          <%= link_to '新建宋词', new_backend_song_poem_path, class: "btn btn-primary" %>
-        </div>
+        <%= link_to new_backend_article_path, class: "btn btn-primary" do %>
+          <%= I18n.t 'pages.new', model: h(Article), scope: :views %>
+        <% end %>
       </div>
       <table class="table">
         <thead>
@@ -19,7 +22,7 @@
         <td><%= h SongPoem, :title %></td>
         <td><%= h SongPoem, :dynasty %></td>
         <td><%= h SongPoem, :author %></td>
-        <td><%= h SongPoem, :type %></td>
+        <td>操作</td>
         </tr>
         </thead>
         <% @song_poems.each do |song_poem| %>
@@ -27,7 +30,10 @@
           <td><%= link_to song_poem.title, [ :backend, song_poem ] %></td>
           <td><%= song_poem.dynasty %></td>
           <td><%= song_poem.author %></td>
-          <td><%= SongPoem.model_name.human %></td>
+          <td>
+            <%= link_to "编辑", [ :edit, :backend, song_poem ] %>
+            <%= link_to "删除", [ :backend, song_poem ], method: :delete, data: { confirm: "确定删除#{song_poem.title}？"} %>
+          </td>
           </tr>
         <% end %>
       </table>

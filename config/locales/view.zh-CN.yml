@@ -11,7 +11,8 @@ zh-CN:
 
   views:
     pages:
-      index: "#{model.model_name.human}列表"
-      new:   "新建#{model.model_name.human}"
-      edit:  "编辑#{model.model_name.human}"
-      show:  "查看#{model.model_name.human}详情"
+      index: "%{model}列表"
+      new: "新建%{model}"
+      edit: "编辑%{model}"
+      show: "查看%{model} 详情"
+      action: "操作"

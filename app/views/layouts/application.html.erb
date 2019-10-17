@@ -12,55 +12,15 @@
   <body>
     <div class="content">
       <div class="container-fluid px-0">
-        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="/">归</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">东坡</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">稼轩</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">关于</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/backend">管理</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="山色空濛雨亦奇" class="text-muted" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
-            </form>
-          </div>
-        </nav>
-
+        <%= render 'layouts/common/navbar', need_search: true %>
         <div>
-          <% flash.each do |key, value| %>
-            <div class="<%= flash_class(key)%> alert-dismissible fade show">
-              <%= value %>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          <% end %>
+          <%= render 'layouts/common/flash' %>
           <%= yield %>
         </div>
-
       </div>
     </div>
 
-    <footer class="d-flex justify-content-center">
-      <p class="text-muted">@2019 归去来兮</p>
-    </footer>
+    <%= render 'layouts/common/footer' %>
 
   </body>
 </html>

@@ -1,3 +1,5 @@
-import '../src/turbolinks.jsx';
+import 'jquery-ujs';
 import 'bootstrap';
-require.context('../statics', true);
+import '../src/turbolinks.jsx';
+require.context('../images', true);
+// console.log("hello");

@@ -1,4 +1,4 @@
-class Backend::SongPoemsController < ApplicationController
+class Backend::SongPoemsController < Backend::BaseController
 
   def index
     @song_poems = SongPoem.all
@@ -12,7 +12,7 @@ class Backend::SongPoemsController < ApplicationController
     @song_poem = SongPoem.new(song_poem_params)
     if @song_poem.save
       flash[:notice] = "created success!"
-      redirect_to works_path
+      redirect_to backend_song_poems_path
     else
       flash[:alert] = "something wrong!"
       render :new
@@ -25,24 +25,24 @@ class Backend::SongPoemsController < ApplicationController
 
   def edit
     @song_poem = SongPoem.find(params[:id])
+  end
+
+  def update
+    @song_poem = SongPoem.find(params[:id])
     if @song_poem.update(song_poem_params)
-      redirect_to works_path
+      redirect_to backend_song_poems_path
     else
       render :new
     end
   end
 
-  def update
-    @song_poem = SongPoem.find(params[:id])
-  end
-
   def destroy
     @song_poem = SongPoem.find(params[:id])
-    @song_poem.delete
+    @song_poem.destroy
   end
 
 protected
   def song_poem_params
-    params.require(:song_poem).permit(:title, :dynasty, :author, :prelude, :content, :explanation)
+    params.permit(:title, :dynasty, :author, :prelude, :content, :explanation)
   end
 end
