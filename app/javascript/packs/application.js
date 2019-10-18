@@ -1,5 +1,4 @@
-import 'jquery-ujs';
-import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap';
+import './style.scss';
 import '../src/turbolinks.jsx';
 require.context('../images', true);
-// console.log("hello");
