@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_073053) do
+ActiveRecord::Schema.define(version: 2019_10_18_084453) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,11 +34,11 @@ ActiveRecord::Schema.define(version: 2019_10_15_073053) do
     t.string "dynasty"
     t.string "author"
     t.string "prelude"
-    t.string "content"
     t.text "explanation"
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "paragraphs", default: [], array: true
   end
 
 end

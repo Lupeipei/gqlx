@@ -5,7 +5,7 @@ ruby '2.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-gem 'sqlite3'
+gem 'pg', '~> 1.1'
 gem 'puma', '~> 3.11'
 gem 'rails-i18n', '~> 5.1'
 
@@ -14,6 +14,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
 gem 'webpacker', '~> 4.0.7'
 gem 'simple_form', '5.0.0'
+gem 'responders', '3.0.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
