@@ -1,0 +1,12 @@
+en:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} 已创建.'
+        alert: '%{resource_name} 无法创建.'
+      update:
+        notice: '%{resource_name} 已更新.'
+        alert: '%{resource_name} 无法更新.'
+      destroy:
+        notice: '%{resource_name} 已删除.'
+        alert: '%{resource_name} 无法删除.'

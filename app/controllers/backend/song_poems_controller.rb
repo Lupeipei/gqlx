@@ -10,13 +10,9 @@ class Backend::SongPoemsController < Backend::BaseController
 
   def create
     @song_poem = SongPoem.new(song_poem_params)
-    if @song_poem.save
-      flash[:notice] = "created success!"
-      redirect_to backend_song_poems_path
-    else
-      flash[:alert] = "something wrong!"
-      render :new
-    end
+    @song_poem.save
+
+    respond_with @song_poem, location: -> { [ :backend, SongPoem ] }
   end
 
   def show
@@ -29,20 +25,20 @@ class Backend::SongPoemsController < Backend::BaseController
 
   def update
     @song_poem = SongPoem.find(params[:id])
-    if @song_poem.update(song_poem_params)
-      redirect_to backend_song_poems_path
-    else
-      render :new
-    end
+    @song_poem.update(song_poem_params)
+
+    respond_with @song_poem, location: -> { [ :backend, SongPoem ] }
   end
 
   def destroy
     @song_poem = SongPoem.find(params[:id])
     @song_poem.destroy
+
+    respond_with @song_poem, location: -> { [ :backend, SongPoem ] }
   end
 
 protected
   def song_poem_params
-    params.permit(:title, :dynasty, :author, :prelude, :content, :explanation)
+    params.require(:song_poem).permit(:title, :dynasty, :author, :prelude, :content, :explanation)
   end
 end

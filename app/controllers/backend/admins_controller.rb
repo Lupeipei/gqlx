@@ -12,7 +12,7 @@ class Backend::AdminsController < Backend::BaseController
     @admin = Admin.new(admin_params)
 
     if @admin.save
-      redirect_to backend_admins_path
+      respond_with @admin, location: [ :backend, Admin ]
     else
       render :new
     end
@@ -21,6 +21,7 @@ class Backend::AdminsController < Backend::BaseController
   def destroy
     @admin = Admin.find(params[:id])
     @admin.destroy
+    respond_with @admin, location: [ :backend, Admin ]
   end
  
 protected

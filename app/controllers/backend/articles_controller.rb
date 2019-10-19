@@ -11,7 +11,7 @@ class Backend::ArticlesController < Backend::BaseController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to works_path
+      respond_with @article, location: [ :backend, Article ]
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Backend::ArticlesController < Backend::BaseController
   def edit
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to works_path
+      respond_with @article, location: [ :backend, Article ]
     else
       render :new
     end
@@ -36,7 +36,8 @@ class Backend::ArticlesController < Backend::BaseController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.delete
+    @article.destroy
+    respond_with @article, location: [ :backend, Article ]
   end
 
 protected
