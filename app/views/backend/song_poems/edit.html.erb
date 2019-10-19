@@ -1,6 +1,4 @@
-<div class="col-md-4 col-md-offset-4">
-  <h2>编辑作品</h2>
+<h2><%= I18n.t 'pages.edit', model: h(SongPoem), scope: :views %></h2>
 
-  <hr>
-  <%= render "form", song_poem: @song_poem %>
-</div>
+<hr>
+<%= render 'form', song_poem: @song_poem %>

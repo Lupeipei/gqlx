@@ -2,18 +2,18 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-10 offset-md-1">
+    <div class="col-md-10 offset-md-0">
       <div class="d-flex justify-content-end mb-3">
         <%= link_to new_backend_article_path, class: "btn btn-primary" do %>
           <%= I18n.t 'pages.new', model: h(Article), scope: :views %>
         <% end %>
       </div>
-      <table class="table">
+      <table class="table table-bordered">
         <thead>
         <tr>
-        <td><%= h SongPoem, :title %></td>
-        <td><%= h SongPoem, :dynasty %></td>
-        <td><%= h SongPoem, :author %></td>
+        <td><%= h Article, :title %></td>
+        <td><%= h Article, :dynasty %></td>
+        <td><%= h Article, :author %></td>
         <td>操作</td>
         </tr>
         </thead>
@@ -24,7 +24,7 @@
           <td><%= article.author %></td>
           <td>
             <%= link_to "编辑", [ :edit, :backend, article ] %>
-            <%= link_to "删除", [ :backend, article ], method: :delete, data: { confirm: "确定删除#{song_poem.title}？"} %>
+            <%= link_to "删除", [ :backend, article ], method: :delete, data: { confirm: "确定删除#{article.title}？"} %>
           </td>
           </tr>
         <% end %>
