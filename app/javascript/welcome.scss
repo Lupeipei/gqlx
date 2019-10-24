@@ -1,0 +1,16 @@
+.jumbotron {
+  min-height: 500px;
+  display: flex;
+  color: $text-muted;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('../images/mythical.jpg');
+  background-size: 100% 100%;
+}
+
+.category {
+  border-left: 6px solid #28a745;
+  padding-left: 0.5em;
+  margin: 1em;
+}

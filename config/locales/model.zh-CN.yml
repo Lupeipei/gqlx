@@ -12,7 +12,7 @@ zh-CN:
         author: 作者
         prelude: 引
         type: 类型
-        content: 内容
+        paragraphs: 内容
         explanation: 释
       song_poem:
         title: 词牌名

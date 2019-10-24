@@ -1,5 +1,5 @@
 @import '../bootstrap/index.scss';
-
+@import '../welcome.scss';
 html {
   height: 100%;
 }
@@ -12,33 +12,17 @@ body {
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
   flex: 1;
 }
-
-.jumbotron {
-  min-height: 500px;
-  display: flex;
-  color: $text-muted;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: url('../images/mythical.jpg');
-  background-size: 100% 100%;
+.header {
+  // border: 1px solid $text-muted;
 }
-
-.category {
-  border-left: 6px solid #28a745;
-  padding-left: 0.5em;
-  margin: 1em;
-}
-
-
-.container-d {
+.sidebar {
+  position: fixed;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-right: auto;
-  margin-left: auto;
+  top: 1rem;
+  height: 100vh;
+  padding-top: 50px;
 }

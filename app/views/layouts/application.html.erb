@@ -11,12 +11,12 @@
 
   <body>
     <div class="content">
-      <div class="container-fluid px-0">
+      <div class="header">
         <%= render 'layouts/common/navbar', need_search: true %>
-        <div>
           <%= render 'layouts/common/flash' %>
-          <%= yield %>
-        </div>
+      <div>
+      <div class="container-fluid px-0">
+        <%= yield %>
       </div>
     </div>
 

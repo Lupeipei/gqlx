@@ -4,7 +4,7 @@
     </div>
   </div>
 
-<h2 class="category">宋词</h2>
+<h2 class="category"><%= h SongPoem %></h2>
 <div class="container">
   <div class="row">
     <% @works.each do |work| %>
@@ -20,3 +20,4 @@
     <% end %>
   </div>
 </div>
+<h2 class="category"><%= h Article %></h2>

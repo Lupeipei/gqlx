@@ -11,27 +11,17 @@
 
   <body>
     <div class="content">
-      <div class="container-fluid px-0 mb-3">
+      <div class="header">
         <%= render 'layouts/common/navbar', profile: true %>
         <%= render 'layouts/common/flash' %>
       </div>
 
       <div class="content-fluid">
         <div class="row flex-xl-nowrap">
-          <div class="col-12 col-md-3 col-xl-2 border-right">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <%= link_to "#{h Admin}", [ :backend, Admin ], class: 'nav-link active' %></li>
-              </li>
-              <li class="nav-item">
-                <%= link_to "#{h SongPoem}", [ :backend, SongPoem ], class: 'nav-link' %></li>
-              </li>
-              <li class="nav-item">
-                <%= link_to "#{h Article}", [ :backend, Article ], class: 'nav-link' %></li>
-              </li>
-            </ul>
+          <div class="col-md-2 border-right">
+            <%= render 'layouts/common/sidebar' %>
           </div>
-          <div class="col">
+          <div class="col p-3">
             <%= yield %>
           </div>
         </div>
