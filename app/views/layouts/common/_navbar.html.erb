@@ -25,5 +25,19 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
       </form>
     <% end %>
+
+    <% if local_assigns[:profile] %>
+      <% if current_admin %>
+        <div class="dropdown pr-3">
+          <button class="btn dropdown-toggle" data-toggle="dropdown">
+            Hi, <%= current_admin.email %>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <%= link_to "个人中心", [ :profile, :basic ], class: "dropdown-item" %>
+            <%= link_to "退出", admins_sign_out_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </nav>
