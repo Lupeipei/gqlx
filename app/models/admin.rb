@@ -12,6 +12,9 @@
 #  updated_at             :datetime         not null
 #  name                   :string
 #  avatar                 :string
+#  confirmation_token     :string
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
 #
 
 class Admin < ApplicationRecord
@@ -19,11 +22,16 @@ class Admin < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 
   before_validation :ensure_password
+  before_save :ensure_name
 
   def ensure_password
     self.password ||= DEFAULT_PASSWORD
+  end
+
+  def ensure_name
+    self.name ||= self.email.split('@').first
   end
 end

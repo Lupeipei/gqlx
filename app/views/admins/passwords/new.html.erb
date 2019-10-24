@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-6 card px-0">
+      <div class="card-header"><%= t(".forgot_your_password") %></div>
+      <div class="card-body">
+        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" } %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, t(".send_me_reset_password_instructions"), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+        <hr>
+        <%= render "admins/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
