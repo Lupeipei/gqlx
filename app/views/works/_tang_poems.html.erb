@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row mx-3">
+    <% poems.each do |poem| %>
+      <div class="col-3 my-3">
+        <div class="poems">
+          <div class="card card-body border-0">
+            <%= link_to poem.title, work_url(poem.id), class: "card-title text-success h5" %>
+            <small class="card-subtitle mb-2 text-muted"><%= poem.dynasty %> - <%= poem.author %></small>
+            <div class="card-text">
+              <% poem.content.each do |line| %>
+              <p><%= line %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

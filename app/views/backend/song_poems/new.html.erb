@@ -1,4 +1,4 @@
 <h2><%= I18n.t 'pages.new', model: h(SongPoem), scope: :views %></h2>
 
 <hr>
-<%= render 'form', song_poem: @song_poem %>
+<%= render 'shared/poem_form', poem: @song_poem %>

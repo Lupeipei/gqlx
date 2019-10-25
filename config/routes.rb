@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :backend do
     resources :admins
     resources :song_poems
+    resources :tang_poems
     resources :articles
   end
 

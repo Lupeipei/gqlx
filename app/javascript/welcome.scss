@@ -14,3 +14,18 @@
   padding-left: 0.5em;
   margin: 1em;
 }
+
+.poems {
+  text-align: center;
+  height: 250px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  .card-body {
+    justify-content: center
+  }
+}
+
+.poem-body {
+  font-size: 24px;
+}

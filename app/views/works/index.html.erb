@@ -4,20 +4,9 @@
     </div>
   </div>
 
+<h2 class="category"><%= h TangPoem %></h2>
+<%= render "tang_poems", poems: @tang_poems %>
 <h2 class="category"><%= h SongPoem %></h2>
-<div class="container">
-  <div class="row">
-    <% @works.each do |work| %>
-      <div class="col-4 poem">
-        <div class="card card-body">
-          <h5 class="card-title text-success"><%= work.title %></h5>
-          <small class="card-subtitle mb-2 text-muted"><%= work.dynasty %> - <%= work.author %></small>
-          <p class="card-text">
-            <%= work.content %>
-          </p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render "song_poems", poems: @song_poems %>
 <h2 class="category"><%= h Article %></h2>
+<%= render "song_poems", poems: @articles %>

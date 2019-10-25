@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_24_023328) do
+ActiveRecord::Schema.define(version: 2019_10_25_022647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,13 @@ ActiveRecord::Schema.define(version: 2019_10_24_023328) do
     t.string "dynasty"
     t.string "author"
     t.string "prelude"
-    t.text "explanation"
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "paragraphs", default: [], array: true
+    t.string "notes", default: [], array: true
+    t.string "translate", default: [], array: true
+    t.string "translate_res", default: [], array: true
+    t.string "content", default: [], array: true
   end
 
 end

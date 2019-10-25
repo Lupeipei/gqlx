@@ -3,7 +3,8 @@ zh-CN:
     models:
       work: 作品
       song_poem: 宋词
-      article: 文集
+      tang_poem: 唐诗
+      article: 遗珠
       admin: 管理员
     attributes:
       work:
@@ -12,8 +13,10 @@ zh-CN:
         author: 作者
         prelude: 引
         type: 类型
-        paragraphs: 内容
-        explanation: 释
+        content: 内容
+        translate: 译文
+        translate_res: 参考
+        notes: 注释
       song_poem:
         title: 词牌名
       admin:

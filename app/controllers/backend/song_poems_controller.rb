@@ -1,7 +1,7 @@
 class Backend::SongPoemsController < Backend::BaseController
 
   def index
-    @song_poems = SongPoem.all
+    @song_poems = SongPoem.all.limit(100)
   end
 
   def new

@@ -16,5 +16,5 @@
 #  content       :string           default("{}"), is an Array
 #
 
-class Article < Work
+class TangPoem < Work
 end

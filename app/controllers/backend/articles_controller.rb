@@ -1,7 +1,7 @@
 class Backend::ArticlesController < Backend::BaseController
 
   def index
-    @articles = Article.all
+    @articles = Article.all.limit(100)
   end
 
   def new

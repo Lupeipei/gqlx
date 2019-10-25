@@ -1,4 +1,48 @@
-<div class="col-md-4 col-md-offset-4">
-  <h2>作品详情</h2>
-  <hr>
+<div class="container">
+  <div class="row my-3">
+    <div class="col-md-8 offset-md-2 d-flex flex-column align-items-center">
+      <h1 class="text-success"><%= @work.title %></h1>
+      <br>
+      <div class="text-muted"><%= @work.dynasty %> - <%= @work.author %></div>
+      <br>
+      <div class="font-weight-normal">
+      <% @work.content.each do |line| %>
+        <p class="poem-body"><%= line %></p>
+      <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<h2 class="category"><%= h Work, :notes %></h2>
+<div class="mx-5">
+  <% if @work.notes.empty? %>
+    <h5 class="font-weight-normal">暂无, <%= link_to '我来补充', [ :edit, :backend, @work ] %></h5>
+  <% else %>
+    <ul class="list-group list-group-flush">
+      <% @work.notes.each do |line| %>
+        <li class="list-group-item"><%= line %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<h2 class="category"><%= h Work, :translate %></h2>
+<div class="mx-5">
+  <% if @work.translate.empty? %>
+    <h5 class="font-weight-normal">暂无, <%= link_to '我来补充', [ :edit, :backend, @work ] %></h5>
+  <% else %>
+    <% @work.translate.each do |line| %>
+      <p><%= line %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<% if @work.translate_res.present? %>
+  <h2 class="category"><%= h Work, :translate_res %></h2>
+  <div class="mx-5">
+    <% @work.translate_res.each do |line| %>
+      <div class="small text-muted"><%= line %></div>
+    <% end %>
+  </div>
+<% end %>

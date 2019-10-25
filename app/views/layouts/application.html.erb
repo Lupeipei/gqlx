@@ -11,10 +11,8 @@
 
   <body>
     <div class="content">
-      <div class="header">
-        <%= render 'layouts/common/navbar', need_search: true %>
-          <%= render 'layouts/common/flash' %>
-      <div>
+      <%= render 'layouts/common/navbar', need_search: true %>
+      <%= render 'layouts/common/flash' %>
       <div class="container-fluid px-0">
         <%= yield %>
       </div>
