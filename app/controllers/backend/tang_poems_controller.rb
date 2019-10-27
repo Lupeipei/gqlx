@@ -26,7 +26,7 @@ class Backend::TangPoemsController < Backend::BaseController
     @tang_poem = TangPoem.find(params[:id])
     @tang_poem.update(tang_poem_params)
 
-    respond_with @tang_poem, location: -> { [ :backend, TangPoem ] }
+    respond_with @tang_poem, location: -> { [ :backend, @tang_poem ] }
   end
 
   def destroy
@@ -38,6 +38,6 @@ class Backend::TangPoemsController < Backend::BaseController
 
 protected
   def tang_poem_params
-    params.require(:tang_poem).permit(:title, :dynasty, :author, :prelude, content: [], translate: [], translate_res: [])
+    params.require(:tang_poem).permit(:title, :dynasty, :author, :prelude, content: [], notes: [], translate: [], translate_res: [])
   end
 end

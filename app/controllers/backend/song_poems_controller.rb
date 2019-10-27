@@ -27,7 +27,7 @@ class Backend::SongPoemsController < Backend::BaseController
     @song_poem = SongPoem.find(params[:id])
     @song_poem.update(song_poem_params)
 
-    respond_with @song_poem, location: -> { [ :backend, SongPoem ] }
+    respond_with @song_poem, location: -> { [ :backend, @song_poem ] }
   end
 
   def destroy
@@ -39,6 +39,6 @@ class Backend::SongPoemsController < Backend::BaseController
 
 protected
   def song_poem_params
-    params.require(:song_poem).permit(:title, :dynasty, :author, :prelude, :content, :explanation)
+    params.require(:song_poem).permit(:title, :dynasty, :author, :prelude, content: [], notes: [], translate: [], translate_res: [])
   end
 end

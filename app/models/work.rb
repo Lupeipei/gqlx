@@ -19,6 +19,8 @@
 class Work < ApplicationRecord
   validates :title, :dynasty, :author, :content, presence: true
 
+  before_save :remove_blank_attribute_assign
+
   def self.fetch_type(type)
     if type&.include?("唐诗")
       TangPoem.name
@@ -27,5 +29,12 @@ class Work < ApplicationRecord
     else
       Article.name
     end
+  end
+
+  def remove_blank_attribute_assign
+    self.content.reject!(&:blank?)
+    self.notes.reject!(&:blank?)
+    self.translate.reject!(&:blank?)
+    self.translate_res.reject!(&:blank?)
   end
 end
