@@ -1,12 +1,29 @@
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container text-dark text-center">
-      <h1 class="display-4">东坡之词旷，稼轩之词豪</h1>
-    </div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-dark text-center">
+    <h1 class="display-4">东坡之词旷，稼轩之词豪</h1>
   </div>
+</div>
 
-<h2 class="category"><%= h TangPoem %></h2>
+<div class="d-flex justify-content-between">
+  <h2 class="category"><%= h TangPoem %></h2>
+  <div class="text-center mx-5 my-auto">
+    <%= link_to '查看更多 >>', works_path, class: 'text-secondary' %>
+  </div>
+</div>
 <%= render "tang_poems", poems: @tang_poems %>
-<h2 class="category"><%= h SongPoem %></h2>
+
+<div class="d-flex justify-content-between">
+  <h2 class="category"><%= h SongPoem %></h2>
+  <div class="text-center mx-5 my-auto">
+    <%= link_to '查看更多 >>', works_path, class: 'text-secondary' %>
+  </div>
+</div>
 <%= render "song_poems", poems: @song_poems %>
-<h2 class="category"><%= h Article %></h2>
+
+<div class="d-flex justify-content-between">
+  <h2 class="category"><%= h Article %></h2>
+  <div class="text-center mx-5 my-auto">
+    <%= link_to '查看更多 >>', works_path, class: 'text-secondary' %>
+  </div>
+</div>
 <%= render "song_poems", poems: @articles %>

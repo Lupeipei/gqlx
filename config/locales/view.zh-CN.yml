@@ -16,3 +16,9 @@ zh-CN:
       edit: "编辑%{model}"
       show: "查看%{model} 详情"
       action: "操作"
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"

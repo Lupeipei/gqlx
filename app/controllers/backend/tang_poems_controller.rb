@@ -1,6 +1,6 @@
 class Backend::TangPoemsController < Backend::BaseController
   def index
-    @tang_poems = TangPoem.all.limit(100)
+    @tang_poems = TangPoem.page(params[:page]).per(10)
   end
 
   def new

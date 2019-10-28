@@ -1,7 +1,7 @@
 class Backend::ArticlesController < Backend::BaseController
 
   def index
-    @articles = Article.all.limit(100)
+    @articles = Article.page(params[:page]).per(10)
   end
 
   def new
