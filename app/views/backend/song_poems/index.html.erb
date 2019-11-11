@@ -3,7 +3,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-10 offset-md-0">
-      <div class="d-flex justify-content-end mb-3">
+      <div class="d-flex justify-content-between align-items-end mb-3">
+        <div class="text-muted">
+          共收录作品 <span class="badge badge-pill badge-success"><%= SongPoem.all.count %></span> 首,
+          作者 <span class="badge badge-pill badge-info"><%= SongPoem.distinct.pluck(:author).count %></span> 人
+        </div>
         <%= link_to new_backend_song_poem_path, class: "btn btn-primary" do %>
           <%= I18n.t 'pages.new', model: h(SongPoem), scope: :views %>
         <% end %>

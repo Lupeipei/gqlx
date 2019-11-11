@@ -1,0 +1,16 @@
+.sidebar {
+  position: sticky;
+  width: 100%;
+  top: 1rem;
+  height: 100vh;
+  padding-top: 5px;
+}
+
+.list-group {
+  text-align: center;
+  font-size: 20px;
+
+  .list-group-item {
+    border: 0;
+  }
+}

@@ -1,5 +1,7 @@
 @import '../bootstrap/index.scss';
 @import '../welcome.scss';
+@import '../backend.scss';
+
 html {
   height: 100%;
 }
@@ -15,11 +17,4 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-}
-.sidebar {
-  position: fixed;
-  width: 100%;
-  top: 1rem;
-  height: 100vh;
-  padding-top: 50px;
 }

@@ -1,0 +1,40 @@
+<h2><%= I18n.t 'pages.index', model: h(HanPoetry), scope: :views %></h2>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 offset-md-0">
+      <div class="d-flex justify-content-between align-items-end mb-3">
+        <div class="text-muted">
+          共收录作品 <span class="badge badge-pill badge-success"><%= HanPoetry.all.count %></span> 首,
+          作者 <span class="badge badge-pill badge-info"><%= HanPoetry.distinct.pluck(:author).count %></span> 人
+        </div>
+        <%= link_to new_backend_han_poetry_path, class: "btn btn-primary" do %>
+          <%= I18n.t 'pages.new', model: h(HanPoetry), scope: :views %>
+        <% end %>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+        <td><%= h HanPoetry, :title %></td>
+        <td><%= h HanPoetry, :dynasty %></td>
+        <td><%= h HanPoetry, :author %></td>
+        <td>操作</td>
+        </tr>
+        </thead>
+        <% @han_poetrys.each do |han_poetry| %>
+          <tr>
+          <td><%= link_to han_poetry.title, [ :backend, han_poetry ] %></td>
+          <td><%= han_poetry.dynasty %></td>
+          <td><%= han_poetry.author %></td>
+          <td>
+            <%= link_to "编辑", [ :edit, :backend, han_poetry ] %>
+            <%= link_to "删除", [ :backend, han_poetry ], method: :delete, data: { confirm: "确定删除#{han_poetry.title}？"} %>
+          </td>
+          </tr>
+        <% end %>
+      </table>
+
+      <%= paginate @han_poetrys, window: 1 %>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,25 @@
 <div class="sidebar">
-  <ul class="nav flex-column">
-    <li class="nav-item">
-      <%= link_to "#{h Admin}", [ :backend, Admin ], class: 'nav-link active' %></li>
-    </li>
-    <li class="nav-item">
-      <%= link_to "#{h TangPoem}", [ :backend, TangPoem ], class: 'nav-link' %></li>
-    </li>
-    <li class="nav-item">
-      <%= link_to "#{h SongPoem}", [ :backend, SongPoem ], class: 'nav-link' %></li>
-    </li>
-    <li class="nav-item">
-      <%= link_to "#{h Article}", [ :backend, Article ], class: 'nav-link' %></li>
-    </li>
-  </ul>
+  <div class="list-group border-0">
+    <%= link_to "#{h Admin}", [ :backend, Admin ], class: 'list-group-item list-group-item-action' %>
+    <%= link_to backend_qin_poetrys_path, class: 'list-group-item list-group-item-action' do %>
+      <%= h QinPoetry %>
+      <span class="badge badge-pill badge-light"><%= QinPoetry.count %></span>
+    <% end %>
+    <%= link_to backend_han_poetrys_path, class: 'list-group-item list-group-item-action' do %>
+      <%= h HanPoetry %>
+      <span class="badge badge-pill badge-light"><%= HanPoetry.count %></span>
+    <% end %>
+    <%= link_to [ :backend, TangPoem ], class: 'list-group-item list-group-item-action' do %>
+      <%= h TangPoem %>
+      <span class="badge badge-pill badge-light"><%= TangPoem.count %></span>
+    <% end %>
+    <%= link_to [ :backend, SongPoem ], class: 'list-group-item list-group-item-action' do %>
+      <%= h SongPoem %>
+      <span class="badge badge-pill badge-light"><%= SongPoem.count %></span>
+    <% end %>
+    <%= link_to [ :backend, Article ], class: 'list-group-item list-group-item-action' do %>
+      <%= h Article %>
+      <span class="badge badge-pill badge-light"><%= Article.count %></span>
+    <% end %>
+  </div>
 </div>
