@@ -1,0 +1,41 @@
+<%= render 'carousel' %>
+
+<div class="d-flex justify-content-between">
+  <h2 class="category"><%= h QinPoetry %></h2>
+  <div class="text-center mx-5 my-auto">
+    <%= link_to '查看更多 >>', works_path(type: 'QinPoetry'), class: 'text-secondary' %>
+  </div>
+</div>
+<%= render "shared/poetrys", poems: @qin_poetrys %>
+
+<div class="d-flex justify-content-between">
+  <h2 class="category"><%= h HanPoetry %></h2>
+  <div class="text-center mx-5 my-auto">
+    <%= link_to '查看更多 >>', works_path(type: 'HanPoetry'), class: 'text-secondary' %>
+  </div>
+</div>
+<%= render "shared/poetrys", poems: @han_poetrys %>
+
+<div class="d-flex justify-content-between">
+  <h2 class="category"><%= h TangPoem %></h2>
+  <div class="text-center mx-5 my-auto">
+    <%= link_to '查看更多 >>', works_path(type: 'TangPoem'), class: 'text-secondary' %>
+  </div>
+</div>
+<%= render "shared/tang_poems", poems: @tang_poems %>
+
+<div class="d-flex justify-content-between">
+  <h2 class="category"><%= h SongPoem %></h2>
+  <div class="text-center mx-5 my-auto">
+    <%= link_to '查看更多 >>', works_path(type: 'SongPoem'), class: 'text-secondary' %>
+  </div>
+</div>
+<%= render "shared/song_poems", poems: @song_poems %>
+
+<div class="d-flex justify-content-between">
+  <h2 class="category"><%= h Article %></h2>
+  <div class="text-center mx-5 my-auto">
+    <%= link_to '查看更多 >>', works_path(type: 'Article'), class: 'text-secondary' %>
+  </div>
+</div>
+<%= render "shared/song_poems", poems: @articles %>

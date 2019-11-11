@@ -9,6 +9,16 @@
   background-size: 100% 100%;
 }
 
+.carousel-inner {
+  img {
+    max-height: 500px;
+  }
+
+  .carousel-caption {
+    margin-bottom: 180px;
+  }
+}
+
 .category {
   border-left: 6px solid #28a745;
   padding-left: 0.5em;
@@ -16,6 +26,7 @@
 }
 
 .poems {
+  // display: flex;
   text-align: center;
   height: 250px;
   overflow: hidden;
