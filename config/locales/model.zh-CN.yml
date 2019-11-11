@@ -15,6 +15,7 @@ zh-CN:
         author: 作者
         prelude: 引
         type: 类型
+        category: 类别
         content: 内容
         translate: 译文
         translate_res: 参考

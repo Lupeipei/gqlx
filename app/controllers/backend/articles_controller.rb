@@ -39,6 +39,6 @@ class Backend::ArticlesController < Backend::BaseController
 
 protected
   def article_params
-    params.require(:article).permit(:title, :dynasty, :author, :prelude, content: [], notes: [], translate: [], translate_res: [])
+    params.require(:article).permit(:title, :dynasty, :author, :prelude, :category, content: [], notes: [], translate: [], translate_res: [])
   end
 end

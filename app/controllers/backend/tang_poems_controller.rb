@@ -38,6 +38,6 @@ class Backend::TangPoemsController < Backend::BaseController
 
 protected
   def tang_poem_params
-    params.require(:tang_poem).permit(:title, :dynasty, :author, :prelude, content: [], notes: [], translate: [], translate_res: [])
+    params.require(:tang_poem).permit(:title, :dynasty, :author, :prelude, :category, content: [], notes: [], translate: [], translate_res: [])
   end
 end

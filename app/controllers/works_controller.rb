@@ -1,12 +1,22 @@
 class WorksController < ApplicationController
 
   def index
-    @tang_poems = TangPoem.all.limit(12)
-    @song_poems = SongPoem.all.limit(12)
-    @articles = Article.all.limit(12)
+    @works = Work.all
+    if params[:type]
+      @works = @works.where(type: params[:type])
+    end
+
+    respond_with @works
   end
 
   def show
     @work = Work.find(params[:id])
+  end
+
+  def dongp
+    @works = SongPoem.where(author: "苏轼")
+  end
+
+  def jiax
   end
 end

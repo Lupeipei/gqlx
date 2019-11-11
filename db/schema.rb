@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_022647) do
+ActiveRecord::Schema.define(version: 2019_11_11_100824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_022647) do
     t.string "translate", default: [], array: true
     t.string "translate_res", default: [], array: true
     t.string "content", default: [], array: true
+    t.string "category"
   end
 
 end

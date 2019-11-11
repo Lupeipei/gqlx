@@ -39,6 +39,6 @@ class Backend::SongPoemsController < Backend::BaseController
 
 protected
   def song_poem_params
-    params.require(:song_poem).permit(:title, :dynasty, :author, :prelude, content: [], notes: [], translate: [], translate_res: [])
+    params.require(:song_poem).permit(:title, :dynasty, :author, :prelude, :category, content: [], notes: [], translate: [], translate_res: [])
   end
 end

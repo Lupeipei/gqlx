@@ -16,7 +16,7 @@
         <thead>
         <tr>
         <td><%= h QinPoetry, :title %></td>
-        <td><%= h QinPoetry, :dynasty %></td>
+        <td><%= h QinPoetry, :category %></td>
         <td><%= h QinPoetry, :author %></td>
         <td>操作</td>
         </tr>
@@ -24,7 +24,7 @@
         <% @qin_poetrys.each do |qin_poetry| %>
           <tr>
           <td><%= link_to qin_poetry.title, [ :backend, qin_poetry ] %></td>
-          <td><%= qin_poetry.dynasty %></td>
+          <td><%= qin_poetry.category_text %></td>
           <td><%= qin_poetry.author %></td>
           <td>
             <%= link_to "编辑", [ :edit, :backend, qin_poetry ] %>

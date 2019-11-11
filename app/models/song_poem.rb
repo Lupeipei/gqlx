@@ -14,6 +14,7 @@
 #  translate     :string           default("{}"), is an Array
 #  translate_res :string           default("{}"), is an Array
 #  content       :string           default("{}"), is an Array
+#  category      :string
 #
 
 class SongPoem < Work

@@ -38,6 +38,6 @@ class Backend::HanPoetrysController < Backend::BaseController
 
 protected
   def han_poetry_params
-    params.require(:han_poetry).permit(:title, :dynasty, :author, :prelude, content: [], notes: [], translate: [], translate_res: [])
+    params.require(:han_poetry).permit(:title, :dynasty, :author, :prelude, :category, content: [], notes: [], translate: [], translate_res: [])
   end
 end

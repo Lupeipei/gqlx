@@ -16,7 +16,7 @@
         <thead>
         <tr>
         <td><%= h TangPoem, :title %></td>
-        <td><%= h TangPoem, :dynasty %></td>
+        <td><%= h TangPoem, :category %></td>
         <td><%= h TangPoem, :author %></td>
         <td>操作</td>
         </tr>
@@ -24,7 +24,7 @@
         <% @tang_poems.each do |tang_poem| %>
           <tr>
           <td><%= link_to tang_poem.title, [ :backend, tang_poem ] %></td>
-          <td><%= tang_poem.dynasty %></td>
+          <td><%= tang_poem.category_text %></td>
           <td><%= tang_poem.author %></td>
           <td>
             <%= link_to "编辑", [ :edit, :backend, tang_poem ] %>

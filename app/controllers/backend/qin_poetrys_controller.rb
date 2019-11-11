@@ -38,6 +38,6 @@ class Backend::QinPoetrysController < Backend::BaseController
 
 protected
   def qin_poetry_params
-    params.require(:qin_poetry).permit(:title, :dynasty, :author, :prelude, content: [], notes: [], translate: [], translate_res: [])
+    params.require(:qin_poetry).permit(:title, :dynasty, :author, :prelude, :category, content: [], notes: [], translate: [], translate_res: [])
   end
 end

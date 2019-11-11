@@ -14,9 +14,12 @@
 #  translate     :string           default("{}"), is an Array
 #  translate_res :string           default("{}"), is an Array
 #  content       :string           default("{}"), is an Array
+#  category      :string
 #
 
 class Work < ApplicationRecord
+  enumerize :category, in: [ :essay, :yuefu, :poetry, :ci ]
+
   validates :title, :dynasty, :author, :content, presence: true
 
   before_save :remove_blank_attribute_assign
