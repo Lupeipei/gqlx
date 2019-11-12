@@ -1,4 +1,13 @@
-<h2><%= I18n.t 'pages.new', model: h(SongPoem), scope: :views %></h2>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to h(SongPoem), [ :backend, :song_poems ] %>
+    </li>
+    <li class="breadcrumb-item active">
+      新建
+    </li>
+  </ol>
+</nav>
 
 <hr>
-<%= render 'shared/poem_form', poem: @song_poem %>
+<%= render 'shared/backend/poem_form', poem: @song_poem %>

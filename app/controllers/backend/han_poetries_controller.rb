@@ -1,6 +1,7 @@
-class Backend::HanPoetrysController < Backend::BaseController
+class Backend::HanPoetriesController < Backend::BaseController
   def index
-    @han_poetrys = HanPoetry.page(params[:page]).per(10)
+    @q = HanPoetry.ransack(params[:q])
+    @han_poetrys = @q.result.page(params[:page])
   end
 
   def new

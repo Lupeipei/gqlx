@@ -1,0 +1,12 @@
+<%= render 'shared/backend/list_nav', klass: HanPoetry %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <%= render 'shared/backend/search_field', q: @q %>
+      <%= render 'shared/backend/work_list', q: @q, works: @han_poetrys %>
+
+      <%= paginate @han_poetrys %>
+    </div>
+  </div>
+</div>

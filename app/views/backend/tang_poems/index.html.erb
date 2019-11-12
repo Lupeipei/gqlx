@@ -1,40 +1,12 @@
-<h2><%= I18n.t 'pages.index', model: h(TangPoem), scope: :views %></h2>
+<%= render 'shared/backend/list_nav', klass: TangPoem %>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-10 offset-md-0">
-      <div class="d-flex justify-content-between align-items-end mb-3">
-        <div class="text-muted">
-          共收录作品 <span class="badge badge-pill badge-success"><%= TangPoem.all.count %></span> 首,
-          作者 <span class="badge badge-pill badge-info"><%= TangPoem.distinct.pluck(:author).count %></span> 人
-        </div>
-        <%= link_to new_backend_tang_poem_path, class: "btn btn-primary" do %>
-          <%= I18n.t 'pages.new', model: h(TangPoem), scope: :views %>
-        <% end %>
-      </div>
-      <table class="table table-bordered">
-        <thead>
-        <tr>
-        <td><%= h TangPoem, :title %></td>
-        <td><%= h TangPoem, :category %></td>
-        <td><%= h TangPoem, :author %></td>
-        <td>操作</td>
-        </tr>
-        </thead>
-        <% @tang_poems.each do |tang_poem| %>
-          <tr>
-          <td><%= link_to tang_poem.title, [ :backend, tang_poem ] %></td>
-          <td><%= tang_poem.category_text %></td>
-          <td><%= tang_poem.author %></td>
-          <td>
-            <%= link_to "编辑", [ :edit, :backend, tang_poem ] %>
-            <%= link_to "删除", [ :backend, tang_poem ], method: :delete, data: { confirm: "确定删除#{tang_poem.title}？"} %>
-          </td>
-          </tr>
-        <% end %>
-      </table>
+    <div class="col-md-12">
+      <%= render 'shared/backend/search_field', q: @q %>
+      <%= render 'shared/backend/work_list', q: @q, works: @tang_poems %>
 
-      <%= paginate @tang_poems, window: 1 %>
+      <%= paginate @tang_poems %>
     </div>
   </div>
 </div>

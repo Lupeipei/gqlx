@@ -35,6 +35,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'enumerize', '2.3.1'
 gem 'devise', '4.7.1'
 
+# controller
+gem 'ransack', '2.3.0'
+
 group :development, :test do
   gem 'pry', '~> 0.12.2'
   gem "pry-byebug"

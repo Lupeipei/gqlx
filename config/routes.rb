@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     resources :admins
     resources :song_poems
     resources :tang_poems
-    resources :qin_poetrys
-    resources :han_poetrys
+    resources :qin_poetries
+    resources :han_poetries
     resources :articles
   end
 

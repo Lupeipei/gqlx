@@ -1,0 +1,18 @@
+<%= search_form_for [ :backend, q ], class: "form-inline mb-3" do |f| %>
+  <div class="form-group">
+    <%= f.label :title_cont, class: "mx-1" %>
+    <%= f.search_field :title_cont, class: "form-control w-auto mx-1" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :author_cont, class: "mx-1" %>
+    <%= f.search_field :author_cont, class: "form-control w-auto mx-1" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :content_cont, class: "mx-1" %>
+    <%= f.search_field :content_cont, class: "form-control w-auto mx-1" %>
+  </div>
+
+  <%= f.submit class: "ml-3 btn btn-outline-secondary" %>
+<% end %>

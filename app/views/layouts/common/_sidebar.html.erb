@@ -1,11 +1,11 @@
 <div class="sidebar">
   <div class="list-group border-0">
     <%= link_to "#{h Admin}", [ :backend, Admin ], class: 'list-group-item list-group-item-action' %>
-    <%= link_to backend_qin_poetrys_path, class: 'list-group-item list-group-item-action' do %>
+    <%= link_to [ :backend, QinPoetry ], class: 'list-group-item list-group-item-action' do %>
       <%= h QinPoetry %>
       <span class="badge badge-pill badge-light"><%= QinPoetry.count %></span>
     <% end %>
-    <%= link_to backend_han_poetrys_path, class: 'list-group-item list-group-item-action' do %>
+    <%= link_to [ :backend, HanPoetry ], class: 'list-group-item list-group-item-action' do %>
       <%= h HanPoetry %>
       <span class="badge badge-pill badge-light"><%= HanPoetry.count %></span>
     <% end %>

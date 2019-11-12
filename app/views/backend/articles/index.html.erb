@@ -1,40 +1,12 @@
-<h2><%= I18n.t 'pages.index', model: h(Article), scope: :views %></h2>
+<%= render 'shared/backend/list_nav', klass: Article %>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-10 offset-md-0">
-      <div class="d-flex justify-content-between align-items-end mb-3">
-        <div class="text-muted">
-          共收录作品 <span class="badge badge-pill badge-success"><%= Article.all.count %></span> 首,
-          作者 <span class="badge badge-pill badge-info"><%= Article.distinct.pluck(:author).count %></span> 人
-        </div>
-        <%= link_to new_backend_article_path, class: "btn btn-primary" do %>
-          <%= I18n.t 'pages.new', model: h(Article), scope: :views %>
-        <% end %>
-      </div>
-      <table class="table table-bordered">
-        <thead>
-        <tr>
-        <td><%= h Article, :title %></td>
-        <td><%= h Article, :category %></td>
-        <td><%= h Article, :author %></td>
-        <td>操作</td>
-        </tr>
-        </thead>
-        <% @articles.each do |article| %>
-          <tr>
-          <td><%= link_to article.title, [ :backend, article ] %></td>
-          <td><%= article.category %></td>
-          <td><%= article.author %> - <%= article.dynasty %></td>
-          <td>
-            <%= link_to "编辑", [ :edit, :backend, article ] %>
-            <%= link_to "删除", [ :backend, article ], method: :delete, data: { confirm: "确定删除#{article.title}？"} %>
-          </td>
-          </tr>
-        <% end %>
-      </table>
+    <div class="col-md-12">
+      <%= render 'shared/backend/search_field', q: @q %>
+      <%= render 'shared/backend/work_list', q: @q, works: @articles %>
 
-      <%= paginate @articles, window: 1 %>
+      <%= paginate @articles %>
     </div>
   </div>
 </div>

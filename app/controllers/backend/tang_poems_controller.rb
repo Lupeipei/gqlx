@@ -1,6 +1,7 @@
 class Backend::TangPoemsController < Backend::BaseController
   def index
-    @tang_poems = TangPoem.page(params[:page]).per(10)
+    @q = TangPoem.ransack(params[:q])
+    @tang_poems = @q.result.page(params[:page])
   end
 
   def new

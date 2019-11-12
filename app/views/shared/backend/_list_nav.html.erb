@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-between align-items-end mb-3">
+  <h2><%= I18n.t 'pages.index', model: h(klass), scope: :views %></h2>
+  <%= link_to [ :new, :backend, klass.name.underscore.to_sym ], class: "btn btn-primary" do %>
+    <%= I18n.t 'pages.new', model: h(klass), scope: :views %>
+  <% end %>
+</div>
+
+<div class="text-muted mb-3">
+  共收录作品 <span class="badge badge-pill badge-success"><%= klass.all.count %></span> 首,
+  作者 <span class="badge badge-pill badge-info"><%= klass.distinct.pluck(:author).count %></span> 人
+</div>

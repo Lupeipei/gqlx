@@ -1,6 +1,7 @@
-class Backend::QinPoetrysController < Backend::BaseController
+class Backend::QinPoetriesController < Backend::BaseController
   def index
-    @qin_poetrys = QinPoetry.page(params[:page]).per(10)
+    @q = QinPoetry.ransack(params[:q])
+    @qin_poetrys = @q.result.page(params[:page])
   end
 
   def new
