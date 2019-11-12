@@ -1,0 +1,41 @@
+<div class="container-fluid px-3">
+  <div class="card mb-3 p-4 border-0">
+    <div class="row">
+      <div class="col-md-3">
+        <img src="<%= asset_pack_path 'media/images/jia.jpg'%>" class="img-thumbnail">
+      </div>
+      <div class="col">
+        <div class="card-body pt-1">
+          <h4 class="card-title">生平</h4>
+          <blockquote class="blockquote mb-0">
+            <p>「1140年5月28日－1207年10月3日」，字幼安，号稼轩居士。生于金国，少年抗金归宋，曾任江西安抚使、福建安抚使等职。追赠少师，谥忠敏。中国南宋豪放派词人，人称词中之龙，与苏轼合称“苏辛”，与李易安并称“济南二安”，和陆游双峰并峙。词风“激昂豪迈，风流豪放”，代表着南宋豪放词的最高成就。</p>
+          </blockquote>
+
+          <h4 class="card-title">评价</h4>
+          <div class="d-flex mb-2">
+            <blockquote class="flex-grow-1 blockquote mb-0">
+              <p class="mb-2">词公一世之豪，以气节自负，以功业自许。</p>
+              <footer class="blockquote-footer float-right">范开 <cite title="Source Title">《稼轩词序》</cite></footer>
+            </blockquote>
+          </div>
+
+          <div class="d-flex mb-2">
+            <blockquote class="flex-grow-1 blockquote mb-0">
+              <p class="mb-2">大材小用古所叹，管仲萧何实流亚。</p>
+              <footer class="blockquote-footer float-right">陆游 <cite title="Source Title">《送辛幼安殿撰造朝》</cite></footer>
+            </blockquote>
+          </div>
+
+          <div class="d-flex mb-2">
+            <blockquote class="flex-grow-1 blockquote mb-0">
+              <p class="mb-2">公所作，大声鞺鞳，小声铿鍧，横绝六合，扫空万古，自有苍生以来所无。其秾纤绵密者，亦不在小晏、秦郎之下。</p>
+              <footer class="blockquote-footer float-right">刘克庄 <cite title="Source Title">《辛稼轩集序》</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'categories', cis: @cis, poetrys: @poetrys, essays: @essays %>
+</div>

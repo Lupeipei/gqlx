@@ -7,10 +7,10 @@
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">东坡</a>
+        <%= link_to "东坡", [ :dongp, :works ], class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">稼轩</a>
+        <%= link_to "稼轩", [ :jiax, :works ], class: "nav-link" %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/about">关于</a>
@@ -34,6 +34,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <%= link_to "个人中心", [ :profile, :basic ], class: "dropdown-item" %>
+            <%= link_to "心动", [ :profile, :basic ], class: "dropdown-item" %>
             <%= link_to "退出", admins_sign_out_path, method: :delete, class: "dropdown-item" %>
           </div>
         </div>

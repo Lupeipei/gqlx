@@ -1,0 +1,23 @@
+  <nav>
+    <div class="nav nav-tabs" role="tablist">
+      <a class="nav-item nav-link h3 active" data-toggle="tab" href="#nav-ci" role="tab" aria-controls="nav-ci" aria-selected="true">词集</a>
+      <a class="nav-item nav-link h3" id="nav-poetry-tab" data-toggle="tab" href="#nav-poetry" role="tab" aria-controls="nav-poetry" aria-selected="false">诗集</a>
+      <a class="nav-item nav-link h3" id="nav-essay-tab" data-toggle="tab" href="#nav-essay" role="tab" aria-controls="nav-essay" aria-selected="false">文集</a>
+    </div>
+  </nav>
+  
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="nav-ci" role="tabpanel" aria-labelledby="nav-ci-tab">
+      <p class="ml-3 mt-3 text-muted">共收录作品 <span class="text-success"><%= cis.count %></span> 首</p>
+      <%= render "shared/category/ci", poems: cis %>
+    </div>
+    <div class="tab-pane fade" id="nav-poetry" role="tabpanel" aria-labelledby="nav-poetry-tab">
+      <p class="ml-3 mt-3 text-muted">共收录作品 <span class="text-success"><%= poetrys.count %></span> 首</p>
+      <%= render "shared/category/poetry", poems: poetrys %>
+    </div>
+    <div class="tab-pane fade" id="nav-essay" role="tabpanel" aria-labelledby="nav-essay-tab">
+      <p class="ml-3 mt-3 text-muted">共收录作品 <span class="text-success"><%= essays.count %></span> 篇</p>
+      <%= render "shared/category/essay", poems: essays %>
+    </div>
+  </div>
+  

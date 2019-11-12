@@ -1,4 +1,13 @@
-<h2><%= I18n.t 'pages.edit', model: h(TangPoem), scope: :views %></h2>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to h(TangPoem), [ :backend, :tang_poems ] %>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= link_to @tang_poem.title, [ :backend, @tang_poem ] %>
+    </li>
+  </ol>
+</nav>
 
 <hr>
 <%= render 'shared/poem_form', poem: @tang_poem %>

@@ -7,10 +7,11 @@
 }
 
 .list-group {
-  text-align: center;
+  text-align: left;
   font-size: 20px;
 
   .list-group-item {
     border: 0;
+    padding-left: 3rem;
   }
 }

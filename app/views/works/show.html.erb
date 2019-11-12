@@ -5,6 +5,10 @@
       <br>
       <div class="text-muted"><%= @work.dynasty %> - <%= @work.author %></div>
       <br>
+      <% if @work.prelude.present? %>
+        <div class="mx-5"><%= @work.prelude %></div>
+        <br>
+      <% end %>
       <div class="font-weight-normal">
       <% @work.content.each do |line| %>
         <p class="poem-body"><%= line %></p>
@@ -19,11 +23,9 @@
   <% if @work.notes.empty? %>
     <h5 class="font-weight-normal">暂无, <%= link_to '我来补充', [ :edit, :backend, @work ] %></h5>
   <% else %>
-    <ul class="list-group list-group-flush">
-      <% @work.notes.each do |line| %>
-        <li class="list-group-item"><%= line %></li>
-      <% end %>
-    </ul>
+    <% @work.notes.each do |line| %>
+      <p><%= line %></p>
+    <% end %>
   <% end %>
 </div>
 

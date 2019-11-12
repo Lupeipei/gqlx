@@ -14,4 +14,20 @@ task data_clean: :environment do
       work.update(content: parsed)
     end
   end
+
+  TangPoem.find_each do |poem|
+    next unless poem.content.any? { |item| item.count("。") > 1 }
+
+    new_content = []
+    poem.content.each do |item|
+      if item.count("。") > 1
+        new_item = item.gsub("。", "。|").split("|")
+        new_content.concat(new_item)
+      else
+        new_content.concat([item])
+      end
+    end
+
+    poem.update(content: new_content)
+  end
 end

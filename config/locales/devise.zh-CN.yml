@@ -141,14 +141,15 @@ zh-CN:
       not_saved:
         one: 发生 1 个错误，导致%{resource}保存失败：
         other: 发生 %{count} 个错误，导致%{resource}保存失败：
-devise:
-  failure:
-    admin:
-      last_attempt: "You have one more attempt before your account is locked."
-      not_found_in_database: "Invalid %{authentication_keys} or password."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "继续操作前请注册或者登录."
-      unconfirmed: "You have to confirm your email address before continuing."
-  sessions:
-    admin:
-      signed_in: "登录成功."
+  devise:
+    failure:
+      admin:
+        last_attempt: "You have one more attempt before your account is locked."
+        not_found_in_database: "Invalid %{authentication_keys} or password."
+        timeout: "Your session expired. Please sign in again to continue."
+        unauthenticated: "继续操作前请注册或者登录."
+        unconfirmed: "You have to confirm your email address before continuing."
+    sessions:
+      admin:
+        signed_in: "登录成功."
+        signed_out: "退出成功."

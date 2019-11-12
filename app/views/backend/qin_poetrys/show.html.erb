@@ -1,4 +1,12 @@
-<h2><%=I18n.t 'pages.show', model: h(QinPoetry), scope: :views %></h2>
+<div class="d-flex justify-content-between align-items-baseline">
+  <h2><%=I18n.t 'pages.show', model: h(QinPoetry), scope: :views %></h2>
+  <div class="mr-3">
+    <%= link_to '编辑', [ :edit, :backend, @qin_poetry ] %>
+  </div>
+</div>
+<hr>
+<br>
+
 <div class="container">
   <div class="row my-3">
     <div class="col-md-8 offset-md-2 d-flex flex-column align-items-center">
