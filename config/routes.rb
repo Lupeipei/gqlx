@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   end
 
   get 'about', to: 'main#about'
+  get 'search', to: 'main#search'
   delete "/admins/sign_out" => "admins/sessions#destroy"
 end
