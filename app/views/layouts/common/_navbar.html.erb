@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">归</a>
+  <a class="navbar-brand mx-auto" href="/"><img src='<%= asset_pack_path 'media/images/logo.png'%>' class="mb-2" style="width: 2.5rem;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,15 +15,18 @@
       <li class="nav-item">
         <a class="nav-link" href="/about">关于</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item d-none" id="showBackend">
         <%= link_to '后台', [ :backend, Admin ], class: "nav-link" %>
       </li>
     </ul>
+    <div id="naughty"></div>
     <% if local_assigns[:need_search] %>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="山色空濛雨亦奇" class="text-muted" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
-      </form>
+      <%= search_form_for @q, url: search_path, method: :get, class: "form-inline my-2 my-lg-0 mr-4" do |f|%>
+        <div class="input-group">
+          <%= f.search_field :title_or_author_or_dynasty_or_content_cont, class: "form-control m-2", style: "width: 400px;", placeholder: '山色空濛雨亦奇……', autocomplete: :on %>
+          <%= f.submit '搜索', class: 'btn btn-outline-success m-2' %>
+        </div>
+      <% end %>
     <% end %>
 
     <% if local_assigns[:profile] %>
@@ -33,7 +36,7 @@
             Hi, <%= current_admin.email %>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <%= link_to "个人中心", [ :profile, :basic ], class: "dropdown-item" %>
+            <%= link_to "个人中心", [ :edit, :profile, :basic ], class: "dropdown-item" %>
             <%= link_to "心动", [ :profile, :basic ], class: "dropdown-item" %>
             <%= link_to "退出", admins_sign_out_path, method: :delete, class: "dropdown-item" %>
           </div>

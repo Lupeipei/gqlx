@@ -1,3 +1,11 @@
+.navbar .navbar-brand {
+  font-size: 2rem;
+}
+
+.navbar-nav .nav-item {
+  font-size: 1.5rem;
+  font-weight: lighter !important;
+}
 .carousel-inner {
   img {
     max-height: 500px;
@@ -28,4 +36,13 @@
 
 .poem-body {
   font-size: 24px;
+}
+
+.about {
+  margin: 50px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background-image: url('../images/owl-s.png');
+  background-repeat: no-repeat;
 }

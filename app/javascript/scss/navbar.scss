@@ -1,0 +1,18 @@
+.navbar .navbar-brand {
+  font-size: 2rem;
+}
+
+.navbar-nav .nav-item {
+  font-size: 1.5rem;
+  font-weight: lighter !important;
+}
+
+#naughty {
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  cursor: progress;
+  position: absolute;
+  z-index: 9999;
+}
