@@ -2,7 +2,7 @@ class Backend::ArticlesController < Backend::BaseController
 
   def index
     @q = Article.ransack(params[:q])
-    @articles = @q.result.page(params[:page])
+    @articles = @q.result.includes(:entries).page(params[:page])
   end
 
   def new

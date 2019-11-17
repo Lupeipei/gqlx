@@ -20,6 +20,10 @@
 class Work < ApplicationRecord
   enumerize :category, in: [ :essay, :yuefu, :poetry, :ci ]
 
+  has_many :entries, -> { order("no") }, dependent: :destroy
+  has_many :plants
+  accepts_nested_attributes_for :entries
+
   validates :title, :dynasty, :author, :content, presence: true
 
   before_save :remove_blank_attribute_assign

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
 
-
+  before_action { @q = Work.includes(:entries).ransack(params[:q]) }
 protected
   def human(model, attribute = nil)
     attribute ? model.human_attribute_name(attribute) : model.model_name.human

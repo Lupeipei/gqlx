@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_100824) do
+ActiveRecord::Schema.define(version: 2019_11_16_090934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,23 @@ ActiveRecord::Schema.define(version: 2019_11_11_100824) do
     t.index ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "entries", force: :cascade do |t|
+    t.text "content"
+    t.integer "no"
+    t.bigint "work_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["work_id"], name: "index_entries_on_work_id"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "fragment"
+    t.bigint "work_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["work_id"], name: "index_plants_on_work_id"
   end
 
   create_table "works", force: :cascade do |t|
