@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row my-3">
+    <div class="col-md-8 offset-md-2 d-flex flex-column align-items-center">
+      <h1 class="text-success"><%= work.title %></h1>
+      <br>
+      <div class="text-muted"><%= work.dynasty %> - <%= work.author %></div>
+      <br>
+      <% if work.prelude.present? %>
+        <div class="mx-5"><%= work.prelude %></div>
+        <br>
+      <% end %>
+      <div class="font-weight-normal">
+        <% work.entries.ranked.each do |entry| %>
+          <p class="poem-body"><%= entry.content %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

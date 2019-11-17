@@ -1,0 +1,33 @@
+<% url = [ :edit, :backend, work ] %>
+<h2 class="category"><%= h Work, :notes %></h2>
+<div class="mx-5">
+  <% if work.notes.empty? %>
+    <h5 class="font-weight-normal">暂无, <%= link_to '我来补充', url %></h5>
+  <% else %>
+    <ul class="list-group list-group-flush">
+      <% work.notes.each do |line| %>
+        <li class="list-group-item"><%= line %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<h2 class="category"><%= h Work, :translate %></h2>
+<div class="mx-5">
+  <% if work.translate.empty? %>
+    <h5 class="font-weight-normal">暂无, <%= link_to '我来补充', url %></h5>
+  <% else %>
+    <% work.translate.each do |line| %>
+      <p><%= line %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<% if work.translate_res.present? %>
+  <h2 class="category"><%= h Work, :translate_res %></h2>
+  <div class="mx-5">
+    <% work.translate_res.each do |line| %>
+      <div class="small text-muted"><%= line %></div>
+    <% end %>
+  </div>
+<% end %>

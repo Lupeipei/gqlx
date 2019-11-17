@@ -6,7 +6,12 @@
     <%= f.input :author %>
     <%= f.input :prelude %>
     <%= f.input :category %>
-    <%= f.input :content, as: :array %>
+    <hr>
+    <%= f.simple_fields_for :entries do |ef| %>
+      <%= ef.input :content %>
+    <% end %>
+    <hr>
+    <%#= f.input :content, as: :array %>
     <%= f.input :notes, as: :array %>
     <%= f.input :translate, as: :array %>
     <%= f.input :translate_res, as: :array %>
