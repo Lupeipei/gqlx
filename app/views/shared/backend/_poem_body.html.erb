@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row my-3">
-    <div class="col-md-8 offset-md-2 d-flex flex-column align-items-center">
+    <div class="col-md-10 offset-md-1 d-flex flex-column align-items-center">
       <h1 class="text-success"><%= work.title %></h1>
       <br>
       <div class="text-muted"><%= work.dynasty %> - <%= work.author %></div>
@@ -10,8 +10,8 @@
         <br>
       <% end %>
       <div class="font-weight-normal">
-        <% work.entries.ranked.each do |entry| %>
-          <p class="poem-body"><%= entry.content %></p>
+        <% work.content.each do |item| %>
+          <p class="poem-body"><%= item %></p>
         <% end %>
       </div>
     </div>

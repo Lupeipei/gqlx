@@ -23,7 +23,7 @@
     <% if local_assigns[:need_search] %>
       <%= search_form_for @q, url: search_path, method: :get, class: "form-inline my-2 my-lg-0 mr-4" do |f|%>
         <div class="input-group">
-          <%= f.search_field :title_or_author_or_dynasty_or_entries_content_cont, class: "form-control m-2", style: "width: 400px;", placeholder: '山色空濛雨亦奇……', autocomplete: :on %>
+          <%= f.search_field :title_or_author_or_dynasty_or_entry_content_cont, class: "form-control m-2", style: "width: 400px;", placeholder: '山色空濛雨亦奇……', autocomplete: :on %>
           <%= f.submit '搜索', class: 'btn btn-outline-success m-2' %>
         </div>
       <% end %>

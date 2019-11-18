@@ -2,10 +2,10 @@ class WelcomesController < ApplicationController
 
   def index
     @slogans = Plant.order("RANDOM()").limit(3)
-    @qin_poetrys = QinPoetry.all.limit(12)
-    @han_poetrys = HanPoetry.all.limit(12)
-    @tang_poems = TangPoem.all.limit(12)
-    @song_poems = SongPoem.all.limit(12)
-    @articles = Article.all.limit(12)
+    @qin_poetrys = QinPoetry.without_essays.limit(12)
+    @han_poetrys = HanPoetry.without_essays.limit(12)
+    @tang_poems = TangPoem.without_essays.limit(12)
+    @song_poems = SongPoem.without_essays.limit(12)
+    @articles = Article.without_essays.limit(12)
   end
 end

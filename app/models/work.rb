@@ -18,15 +18,16 @@
 #
 
 class Work < ApplicationRecord
-  enumerize :category, in: [ :essay, :yuefu, :poetry, :ci ]
+  enumerize :category, in: [ :essay, :yuefu, :poetry, :ci, :song ]
 
-  has_many :entries, -> { order("no") }, dependent: :destroy
+  has_one :entry, dependent: :destroy
   has_many :plants
-  accepts_nested_attributes_for :entries
 
   validates :title, :dynasty, :author, :content, presence: true
 
   before_save :remove_blank_attribute_assign
+  
+  scope :without_essays, -> { where.not(category: :essay) }
 
   def self.fetch_type(type)
     if type&.include?("唐诗")
