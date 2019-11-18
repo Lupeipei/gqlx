@@ -4,7 +4,7 @@ class MainController < ApplicationController
   end
 
   def search
-    @works_scope = @q.result(distinct: true)
-    @works = @works_scope.page(params[:page])
+    @works = @q.result(distinct: true)
+    # @works = @works_scope.page(params[:page])
   end
 end

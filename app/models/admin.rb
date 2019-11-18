@@ -26,6 +26,7 @@ class Admin < ApplicationRecord
 
   before_validation :ensure_password
   before_save :ensure_name
+  has_many :flips, dependent: :destroy
 
   def ensure_password
     self.password ||= DEFAULT_PASSWORD

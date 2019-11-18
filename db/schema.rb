@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_031837) do
+ActiveRecord::Schema.define(version: 2019_11_18_123513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2019_11_18_031837) do
     t.index ["work_id"], name: "index_entries_on_work_id"
   end
 
+  create_table "flips", force: :cascade do |t|
+    t.bigint "work_id"
+    t.bigint "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_flips_on_admin_id"
+    t.index ["work_id"], name: "index_flips_on_work_id"
+  end
+
   create_table "plants", force: :cascade do |t|
     t.string "fragment"
     t.bigint "work_id"
@@ -69,7 +78,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_031837) do
     t.string "notes", default: [], array: true
     t.string "translate", default: [], array: true
     t.string "translate_res", default: [], array: true
-    t.string "content", default: [], array: true
+    t.text "content", default: [], array: true
     t.string "category"
   end
 

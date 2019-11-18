@@ -24,14 +24,14 @@
 }
 
 .poems {
-  // display: flex;
-  text-align: center;
-  height: 250px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  overflow: auto;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  .card-body {
-    justify-content: center
+  .card {
+    height: 250px;
   }
 }
 
