@@ -31,3 +31,19 @@
     <% end %>
   </div>
 <% end %>
+
+<h2 class="category"><%= h Suggestion %></h2>
+<div class="mx-5">
+  <% if work.suggestions.present? %>
+    <% work.suggestions.each do |suggestion| %>
+      <div class="card border-0 mb-3">
+        <div class="card-body pl-0">
+          <blockquote class="blockquote mb-0">
+            <p><%= suggestion.comments %></p>
+            <footer class="blockquote-footer float-right"><%= suggestion.email %></footer>
+          </blockquote>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -48,3 +48,16 @@
     <% end %>
   </div>
 <% end %>
+
+<h2 class="category">完善</h2>
+<div class="mx-5">
+  <div class="row">
+    <div class="col-md-4">
+      <%= simple_form_for(@suggestion, as: :suggestion, url: work_suggestions_path(@work), method: :post) do |f| %>
+        <%= f.input :email, as: :email %>
+        <%= f.input :comments, as: :text, label: false, placeholder: "#{@work.title}......" %>
+        <%= f.submit '提交', class: "btn btn-success float-right" %>
+      <% end %>
+    </div>
+  </div>
+</div>

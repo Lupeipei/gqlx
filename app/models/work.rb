@@ -22,6 +22,7 @@ class Work < ApplicationRecord
 
   has_one :entry, dependent: :destroy
   has_many :plants
+  has_many :suggestions, dependent: :destroy
 
   validates :title, :dynasty, :author, :content, presence: true
 

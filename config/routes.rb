@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :works, only: [ :index, :show ] do
     get :dongp, on: :collection
     get :jiax, on: :collection
+    resources :suggestions
   end
 
   namespace :backend do

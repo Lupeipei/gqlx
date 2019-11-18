@@ -5,12 +5,11 @@ class WorksController < ApplicationController
     if params[:type]
       @works = @works.where(type: params[:type])
     end
-
-    respond_with @works
   end
 
   def show
     @work = Work.find(params[:id])
+    @suggestion = @work.suggestions.new
   end
 
   def dongp
