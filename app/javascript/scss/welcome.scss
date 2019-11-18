@@ -8,11 +8,12 @@
 }
 .carousel-inner {
   img {
-    max-height: 500px;
+    max-height: 600px;
+    object-fit: cover;
   }
 
   .carousel-caption {
-    margin-bottom: 180px;
+    margin-bottom: 230px;
   }
 }
 
