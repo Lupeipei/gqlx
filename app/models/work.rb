@@ -23,11 +23,13 @@ class Work < ApplicationRecord
   has_one :entry, dependent: :destroy
   has_many :plants
   has_many :suggestions, dependent: :destroy
+  has_many :flips, dependent: :destroy
 
   validates :title, :dynasty, :author, :content, presence: true
 
   before_save :remove_blank_attribute_assign
-  
+  before_save :update_entry, on: :update, if: -> { will_save_change_to_content? }
+
   scope :without_essays, -> { where.not(category: :essay) }
 
   def self.fetch_type(type)
@@ -41,9 +43,17 @@ class Work < ApplicationRecord
   end
 
   def remove_blank_attribute_assign
-    self.content.reject!(&:blank?)
-    self.notes.reject!(&:blank?)
-    self.translate.reject!(&:blank?)
-    self.translate_res.reject!(&:blank?)
+    content.reject!(&:blank?)
+    notes.reject!(&:blank?)
+    translate.reject!(&:blank?)
+    translate_res.reject!(&:blank?)
+  end
+
+  def update_entry
+    new_content = content.join('').gsub(/[\r\n\s]+/, '')
+
+    if entry.content != new_content
+      entry.update(content: new_content)
+    end
   end
 end
