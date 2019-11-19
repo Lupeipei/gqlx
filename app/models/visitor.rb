@@ -19,5 +19,5 @@
 #  superadmin             :boolean
 #
 
-class Admin < User
+class Visitor < User
 end

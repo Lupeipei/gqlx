@@ -19,5 +19,27 @@
 #  superadmin             :boolean
 #
 
-class Admin < User
+class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :trackable
+  DEFAULT_PASSWORD = '123456'.freeze
+
+  before_validation :ensure_password
+  before_save :ensure_nickname
+  before_save :default_visitor
+  has_many :flips, dependent: :destroy
+
+  def ensure_password
+    self.password ||= DEFAULT_PASSWORD
+  end
+
+  def ensure_nickname
+    self.nickname ||= self.email.split('@').first
+  end
+
+  def default_visitor
+    self.type ||= 'Visitor'
+  end
 end

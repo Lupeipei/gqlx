@@ -1,7 +1,7 @@
 zh-CN:
   activerecord:
     attributes:
-      admin:
+      user:
         confirmation_sent_at: 确认邮件发送于
         confirmation_token: 确认令牌
         confirmed_at: 确认于
@@ -26,8 +26,8 @@ zh-CN:
         unlock_token: 帐户解锁令牌
         updated_at: 更新于
     models:
-      admin: 管理员
-  admins:
+      user: 用户
+  users:
     confirmations:
       confirmed: 成功验证您的邮箱。
       new:
@@ -130,7 +130,7 @@ zh-CN:
       send_instructions: 几分钟后，您将收到一封解锁帐户的邮件。
       send_paranoid_instructions: 如果您的邮箱存在于我们的数据库中，您将收到一封解锁帐户的邮件。
       unlocked: 您的帐户已成功解锁，现在已登录。
-    admins:
+    users:
   errors:
     messages:
       already_confirmed: 已经确认，请重新登录。
@@ -143,13 +143,18 @@ zh-CN:
         other: 发生 %{count} 个错误，导致%{resource}保存失败：
   devise:
     failure:
-      admin:
+      already_authenticated: 您已经登录。
+      user:
         last_attempt: "You have one more attempt before your account is locked."
         not_found_in_database: "Invalid %{authentication_keys} or password."
         timeout: "Your session expired. Please sign in again to continue."
         unauthenticated: "继续操作前请注册或者登录."
         unconfirmed: "You have to confirm your email address before continuing."
     sessions:
-      admin:
+      user:
         signed_in: "登录成功."
         signed_out: "退出成功."
+    registrations:
+      user:
+        signed_up: 欢迎您！您已注册成功。
+

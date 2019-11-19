@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admins, controllers: { sessions: 'admins/sessions', registrations: 'admins/registrations', passwords: 'admins/passwords' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', passwords: 'users/passwords' }
+
   root to: 'welcomes#index'
   resources :welcomes, only: [ :index ]
   resources :works, only: [ :index, :show ] do
@@ -24,5 +25,5 @@ Rails.application.routes.draw do
 
   get 'about', to: 'main#about'
   get 'search', to: 'main#search'
-  delete "/admins/sign_out" => "admins/sessions#destroy"
+  delete "/users/sign_out" => "users/sessions#destroy"
 end

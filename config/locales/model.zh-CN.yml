@@ -7,6 +7,7 @@ zh-CN:
       tang_poem: 唐诗
       song_poem: 宋词
       article: 遗珠
+      user: 用户
       admin: 管理员
       entry: 内容
       suggestion: 建议
@@ -24,8 +25,8 @@ zh-CN:
         notes: 注释
       song_poem:
         title: 词牌名
-      admin:
-        name: 姓名
+      user:
+        nickname: 昵称
         email: 邮箱
         password: 密码
         password_confirmation: 确认密码
@@ -35,4 +36,3 @@ zh-CN:
         comments: 详情
       entry:
         content: 段落
-  

@@ -38,7 +38,7 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <%= link_to "个人中心", [ :edit, :profile, :basic ], class: "dropdown-item" %>
             <%= link_to "心动", [ :profile, :basic ], class: "dropdown-item" %>
-            <%= link_to "退出", admins_sign_out_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "退出", users_sign_out_path, method: :delete, class: "dropdown-item" %>
           </div>
         </div>
       <% end %>

@@ -11,17 +11,17 @@
       <table class="table table-bordered">
         <thead>
         <tr>
-        <td><%= h Admin, :name %></td>
+        <td><%= h Admin, :nickname %></td>
         <td><%= h Admin, :email %></td>
         <td><%= I18n.t 'pages.action', scope: :views %></td>
         </tr>
         </thead>
         <% @admins.each do |admin| %>
           <tr>
-          <td><%= link_to admin.name, [ :backend, admin ] %></td>
+          <td><%= link_to admin.nickname, [ :backend, admin ] %></td>
           <td><%= admin.email %></td>
           <td>
-            <%= link_to "删除", [ :backend, admin ], method: :delete, data: { confirm: "确定删除 #{admin.name}？"} %>
+            <%= link_to "删除", [ :backend, admin ], method: :delete, data: { confirm: "确定删除 #{admin.nickname}？"} %>
           </td>
           </tr>
         <% end %>
