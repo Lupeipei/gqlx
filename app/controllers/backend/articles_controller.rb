@@ -1,5 +1,4 @@
 class Backend::ArticlesController < Backend::BaseController
-
   def index
     @q = Article.ransack(params[:q])
     @articles = @q.result.page(params[:page])

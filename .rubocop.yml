@@ -1,0 +1,94 @@
+#inherit_from: .rubocop_todo.yml
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - node_modules/**/*
+    - bin/*
+    - db/schema.rb
+
+
+Bundler/OrderedGems:
+  Enabled: false
+
+
+Layout/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Layout/AlignHash:
+    Exclude:
+    - config/initializers/*.rb
+
+Layout/EmptyLines:
+    Exclude:
+    - config/initializers/*.rb
+
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: false
+
+Layout/IndentFirstArrayElement:
+  EnforcedStyle: consistent
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: false
+
+
+Metrics/BlockLength:
+#  Max: 150
+  Exclude:
+    - config/initializers/*.rb
+    - spec/**/*_spec.rb
+    - config/routes.rb
+
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - db/migrate/*.rb
+
+Metrics/LineLength:
+  Max: 160
+  Exclude:
+    - config/initializers/*.rb
+
+Metrics/AbcSize:
+  Max: 50
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/LambdaCall:
+  EnforcedStyle: braces
+
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*_spec.rb
+
+Style/ClassAndModuleChildren:
+ Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

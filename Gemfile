@@ -38,10 +38,14 @@ gem 'devise', '4.7.1'
 # controller
 gem 'ransack', '2.3.0'
 
+# style
+gem 'rubocop', '0.76'
+
 group :development, :test do
   gem 'pry', '~> 0.12.2'
   gem "pry-byebug"
   gem 'pry-rails', '~> 0.3.6'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development do
@@ -52,13 +56,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rspec-rails', '~> 3.8'
-
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'rspec-rails', '~> 3.8'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome

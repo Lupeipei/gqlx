@@ -1,5 +1,4 @@
 class Backend::SongPoemsController < Backend::BaseController
-
   def index
     @q = SongPoem.ransack(params[:q])
     @song_poems = @q.result.page(params[:page])

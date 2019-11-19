@@ -1,5 +1,5 @@
 class ArrayInput < SimpleForm::Inputs::Base
-  def input(wrapper_options = nil)
+  def input(_wrapper_options = nil)
     existing_values = Array(object.public_send(attribute_name))
     template.content_tag(:div) do
       existing_values.each_with_index do |array_el, index|
@@ -16,7 +16,7 @@ class ArrayInput < SimpleForm::Inputs::Base
   end
 
   def input_html_options
-    super.merge({ class: 'form-control rounded', type: :text })
+    super.merge(class: 'form-control rounded', type: :text)
   end
 
   def builder_input_with_remove_btn(element, disabled = false)
@@ -35,18 +35,18 @@ class ArrayInput < SimpleForm::Inputs::Base
 
   def remove_item_btn
     content = <<~HTML
-    <div class="input-group-append ml-2">
-      <button type="button" class="btn btn-secondary btn-sm rounded array-remove-item">移除 -</button>
-    </div>
+      <div class="input-group-append ml-2">
+        <button type="button" class="btn btn-secondary btn-sm rounded array-remove-item">移除 -</button>
+      </div>
     HTML
     content.html_safe
   end
 
   def disabled_remove_item_btn
     content = <<~HTML
-    <div class="input-group-append ml-2">
-      <button type="button" class="btn btn-secondary btn-sm rounded array-remove-item" disabled>移除 -</button>
-    </div>
+      <div class="input-group-append ml-2">
+        <button type="button" class="btn btn-secondary btn-sm rounded array-remove-item" disabled>移除 -</button>
+      </div>
     HTML
     content.html_safe
   end

@@ -1,5 +1,4 @@
 class WorksController < ApplicationController
-
   def index
     @works = Work.all
     if params[:type]

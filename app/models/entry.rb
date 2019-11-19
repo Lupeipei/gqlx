@@ -11,5 +11,4 @@
 
 class Entry < ApplicationRecord
   belongs_to :work
-
 end

@@ -9,7 +9,8 @@ task data_import: :environment do
       data = JSON.parse(line)
       work = Work.new
       work.attribute_names.each do |attribute|
-        next if ["id", "prelude"].include?(attribute)
+        next if %w[id prelude].include?(attribute)
+
         if attribute == "title"
           work.title = data["name"]
         elsif attribute == "type"
@@ -19,6 +20,7 @@ task data_import: :environment do
         end
       end
       next unless work.valid?
+
       work.save
     end
   end

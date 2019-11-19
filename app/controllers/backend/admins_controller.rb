@@ -1,5 +1,4 @@
 class Backend::AdminsController < Backend::BaseController
-
   def index
     @admins = Admin.all
   end
@@ -23,7 +22,7 @@ class Backend::AdminsController < Backend::BaseController
     @admin.destroy
     respond_with @admin, location: [ :backend, Admin ]
   end
- 
+
 protected
   def admin_params
     params.require(:admin).permit(:email, :name)
