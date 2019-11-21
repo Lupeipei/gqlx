@@ -1,5 +1,5 @@
-class ArrayInput < SimpleForm::Inputs::Base
-  def input(_wrapper_options = nil)
+class ArraytextInput < SimpleForm::Inputs::TextInput
+  def input(wrapper_options = nil)
     existing_values = Array(object.public_send(attribute_name))
     template.content_tag(:div) do
       existing_values.each_with_index do |array_el, index|
@@ -21,7 +21,7 @@ class ArrayInput < SimpleForm::Inputs::Base
 
   def builder_input_with_remove_btn(element, disabled = false)
     template.content_tag(:div, class: 'input-group mb-3') do
-      template.concat @builder.text_field(nil, input_html_options.merge(value: element, name: "#{object_name}[#{attribute_name}][]"))
+      template.concat @builder.text_area(nil, input_html_options.merge(value: element, name: "#{object_name}[#{attribute_name}][]", rows: 1))
       disabled ? template.concat(disabled_remove_item_btn) : template.concat(remove_item_btn)
     end
   end

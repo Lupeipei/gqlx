@@ -6,7 +6,11 @@
     <%= f.input :author %>
     <%= f.input :prelude %>
     <%= f.input :category %>
-    <%= f.input :content, as: :array %>
+    <% if poem.category.essay? %>
+      <%= f.input :content, as: :arraytext %>
+    <% else %>
+      <%= f.input :content, as: :array %>
+    <% end %>
     <%= f.input :notes, as: :array %>
     <%= f.input :translate, as: :array %>
     <%= f.input :translate_res, as: :array %>

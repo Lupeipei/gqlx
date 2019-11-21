@@ -52,12 +52,19 @@ Metrics/LineLength:
 Metrics/AbcSize:
   Max: 50
 
+Style/AsciiComments:
+  Exclude:
+    - lib/tasks/*.rb
+
 Style/StringLiterals:
   Enabled: false
 
 Style/BlockComments:
   Exclude:
     - spec/spec_helper.rb
+
+Style/ConditionalAssignment:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

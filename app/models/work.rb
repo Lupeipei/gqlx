@@ -13,7 +13,7 @@
 #  notes         :string           default("{}"), is an Array
 #  translate     :string           default("{}"), is an Array
 #  translate_res :string           default("{}"), is an Array
-#  content       :string           default("{}"), is an Array
+#  content       :text             default("{}"), is an Array
 #  category      :string
 #
 
@@ -28,25 +28,22 @@ class Work < ApplicationRecord
   validates :title, :dynasty, :author, :content, presence: true
 
   before_save :remove_blank_attribute_assign
-  before_save :update_entry, on: :update, if: -> { will_save_change_to_content? }
+  after_create :ensure_entry
+  before_update :update_entry, on: :update, if: -> { will_save_change_to_content? }
 
   scope :without_essays, -> { where.not(category: :essay) }
-
-  def self.fetch_type(type)
-    if type&.include?("唐诗")
-      TangPoem.name
-    elsif type&.include?("宋词")
-      SongPoem.name
-    else
-      Article.name
-    end
-  end
 
   def remove_blank_attribute_assign
     content.reject!(&:blank?)
     notes.reject!(&:blank?)
     translate.reject!(&:blank?)
     translate_res.reject!(&:blank?)
+  end
+
+  def ensure_entry
+    entry = Entry.new(work_id: self.id)
+    entry.content = content.join('').gsub(/[\r\n\s]+/, '')
+    entry.save
   end
 
   def update_entry
