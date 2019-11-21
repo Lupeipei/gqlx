@@ -1,6 +1,7 @@
 class SuggestionsController < ApplicationController
   def create
     @work = Work.find(params[:work_id])
+    @suggestion.user_id = current_user if current_user
     @suggestion = @work.suggestions.new(suggestion_params)
 
     if @suggestion.save
