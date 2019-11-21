@@ -41,9 +41,13 @@
 
 .about {
   margin: 50px;
-  min-height: 500px;
+  min-height: 300px;
   display: flex;
   align-items: center;
-  background-image: url('../images/owl-s.png');
-  background-repeat: no-repeat;
+  p {
+    font-size: 20px;
+    margin-bottom: 2rem;
+  }
+  // background-image: url('../images/owl-s.png');
+  // background-repeat: no-repeat;
 }
