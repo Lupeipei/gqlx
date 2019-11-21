@@ -31,6 +31,7 @@ class User < ApplicationRecord
   before_save :default_visitor, only: :create
   has_many :flips, dependent: :destroy
   has_many :flipped_works, class_name: Work.to_s, through: :flips
+  has_many :suggestions, dependent: :destroy
 
   attr_writer :current_password
 
