@@ -1,17 +1,29 @@
 class Profile::BasicsController < ApplicationController
-  layout 'backend'
+  before_action :authenticate_user!
 
-  def edit
-    @user = current_user
+  def show
+    @user = User.find(current_user.id)
+    # @suggestions = @user.suggestions
   end
 
   def update
-    @user = current_user
-    @user.update(user_params)
-    respond_with @user
+    @user = User.find(current_user.id)
+    if user_params.values_at(*password_params).any?(&:present?)
+      @user.update_with_password(user_params)
+    else
+      @user.update(user_params)
+      flash[:notice] = "更新成功！"
+    end
+
+    redirect_to profile_basic_url
   end
+
 protected
   def user_params
-    params.fetch(:user).permit(:name, :password, :password_confirmation)
+    params.fetch(:user).permit(:nickname, :email, *password_params)
+  end
+
+  def password_params
+    [ :current_password, :password, :password_confirmation ]
   end
 end

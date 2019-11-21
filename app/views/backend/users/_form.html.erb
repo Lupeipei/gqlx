@@ -1,8 +1,10 @@
 <div class="row">
   <div class="col-lg-8 offset-md-2">
-    <%= simple_form_for [ :backend, admin ] do |f| %>
-    <%= f.input :name %>
+    <%= simple_form_for [ :backend, user ] do |f| %>
+    <%= f.input :nickname %>
     <%= f.input :email %>
+    <%= f.input :type %>
+    <%= f.input :superadmin, default: false %>
 
     <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>

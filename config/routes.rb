@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   root to: 'welcomes#index'
   resources :welcomes, only: [ :index ]
   resources :works, only: [ :index, :show ] do
-    get :dongp, on: :collection
-    get :jiax, on: :collection
+    collection do
+      get :dongp
+      get :jiax
+    end
     resources :suggestions
   end
 
   namespace :backend do
-    resources :admins
+    resources :users
     resources :song_poems
     resources :tang_poems
     resources :qin_poetries

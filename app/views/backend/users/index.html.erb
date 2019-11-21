@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-between mb-3">
+  <h2><%= I18n.t 'pages.index', model: h(User), scope: :views %></h2>
+  <div class="action">
+    <%= link_to [ :new, :backend, :user ], class: "btn btn-primary" do %>
+      <%= I18n.t 'pages.new', model: h(User), scope: :views %>
+    <% end %>
+  </div>
+</div>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="admin-tab" data-toggle="tab" href="#admin" role="tab"><%= h(Admin) %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="visitor-tab" data-toggle="tab" href="#visitor" role="tab"><%= h(Visitor) %></a>
+  </li>
+</ul>
+<hr>
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="admin" role="tabpanel" aria-labelledby="admin-tab">
+    <%= render 'list', users: @users.where(type: 'Admin') %>
+  </div>
+  <div class="tab-pane fade" id="visitor" role="tabpanel" aria-labelledby="visitor-tab">
+    <%= render 'list', users: @users.where(type: 'Visitor') %>
+  </div>
+</div>

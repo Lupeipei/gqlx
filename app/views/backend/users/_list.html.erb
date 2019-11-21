@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-0">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+        <td><%= h User, :nickname %></td>
+        <td><%= h User, :email %></td>
+        <td><%= I18n.t 'pages.action', scope: :views %></td>
+        </tr>
+        </thead>
+        <% users.each do |user| %>
+          <tr>
+          <td><%= link_to user.nickname, backend_user_url(user) %></td>
+          <td><%= user.email %></td>
+          <td>
+            <%= link_to "删除", backend_user_url(user), method: :delete, data: { confirm: "确定删除 #{user.nickname}？"} if user.is_a?(Admin) %>
+          </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

@@ -152,9 +152,10 @@ zh-CN:
         unconfirmed: "You have to confirm your email address before continuing."
     sessions:
       user:
-        signed_in: "登录成功."
+        signed_in: "Welcome Back."
         signed_out: "退出成功."
     registrations:
       user:
         signed_up: 欢迎您！您已注册成功。
-
+    shared:
+      minimum_password_length: "（最少%{count}个字符）"

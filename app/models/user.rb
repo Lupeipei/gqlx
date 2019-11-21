@@ -27,9 +27,12 @@ class User < ApplicationRecord
   DEFAULT_PASSWORD = '123456'.freeze
 
   before_validation :ensure_password
-  before_save :ensure_nickname
-  before_save :default_visitor
+  before_save :ensure_nickname, only: :create
+  before_save :default_visitor, only: :create
   has_many :flips, dependent: :destroy
+  has_many :flipped_works, class_name: Work.to_s, through: :flips
+
+  attr_writer :current_password
 
   def ensure_password
     self.password ||= DEFAULT_PASSWORD
@@ -42,4 +45,8 @@ class User < ApplicationRecord
   def default_visitor
     self.type ||= 'Visitor'
   end
+
+  # def password_required?
+  #   new_record? || password.present? || password_confirmation.present?
+  # end
 end

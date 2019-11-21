@@ -9,6 +9,7 @@ zh-CN:
       article: 遗珠
       user: 用户
       admin: 管理员
+      visitor: 访客
       entry: 内容
       suggestion: 建议
     attributes:
@@ -28,7 +29,10 @@ zh-CN:
       user:
         nickname: 昵称
         email: 邮箱
-        password: 密码
+        type: 类型
+        superadmin: 超级管理员
+        current_password: 旧密码
+        password: 新密码
         password_confirmation: 确认密码
         remember_me: 记住我
       suggestion:

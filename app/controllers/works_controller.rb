@@ -9,6 +9,9 @@ class WorksController < ApplicationController
   def show
     @work = Work.find(params[:id])
     @suggestion = @work.suggestions.new
+    if current_user
+      @suggestion.email = current_user.email
+    end
   end
 
   def dongp

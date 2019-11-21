@@ -15,9 +15,11 @@
       <li class="nav-item">
         <a class="nav-link" href="/about">关于</a>
       </li>
-      <li class="nav-item d-none" id="showBackend">
-        <%= link_to '后台', [ :backend, Admin ], class: "nav-link" %>
-      </li>
+      <% if current_user && current_user.is_a?(Admin) %>
+        <li class="nav-item d-none" id="showBackend">
+          <%= link_to '后台', [ :backend, User ], class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
     <div id="naughty"></div>
     <% if local_assigns[:need_search] %>
@@ -29,18 +31,19 @@
       <% end %>
     <% end %>
 
-    <% if local_assigns[:profile] %>
-      <% if current_admin %>
-        <div class="dropdown pr-3">
-          <button class="btn dropdown-toggle" data-toggle="dropdown">
-            Hi, <%= current_admin.email %>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <%= link_to "个人中心", [ :edit, :profile, :basic ], class: "dropdown-item" %>
-            <%= link_to "心动", [ :profile, :basic ], class: "dropdown-item" %>
-            <%= link_to "退出", users_sign_out_path, method: :delete, class: "dropdown-item" %>
-          </div>
+    <% if current_user %>
+      <div class="dropdown pr-3">
+        <button class="btn dropdown-toggle" data-toggle="dropdown">
+          Hi, <%= current_user.nickname %>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <%= link_to "个人中心", [ :profile, :basic ], class: "dropdown-item" %>
+          <%= link_to "退出", users_sign_out_path, method: :delete, class: "dropdown-item" %>
         </div>
+      </div>
+    <% else %>
+      <%= link_to new_user_session_path, class: 'text-muted' do %>
+        <i class="fas fa-user mr-1"></i>登录
       <% end %>
     <% end %>
   </div>
