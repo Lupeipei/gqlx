@@ -1,5 +1,40 @@
-<div class="d-flex justify-content-between align-items-baseline">
-  <h2><%=I18n.t 'pages.show', model: h(User), scope: :views %></h2>
+<div class="d-flex flex-column justify-content-center mx-5">
+  <h2 class="mb-3"><%=I18n.t 'pages.show', model: h(User), scope: :views %></h2>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab">基本信息</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="suggestions-tab" data-toggle="tab" href="#suggestions" role="tab">建议列表</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="flips-tab" data-toggle="tab" href="#flips" role="tab">心动诗词</a>
+    </li>
+  </ul>
+  <hr>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= h User, :nickname %>: <%= @user.nickname %></li>
+            <li class="list-group-item"><%= h User, :email %>: <%= @user.email %></li>
+            <% if @user.superadmin %>
+              <li class="list-group-item"><%= h User, :current_sign_in_at %>: <%= @user.current_sign_in_at %></li>
+              <li class="list-group-item"><%= h User, :sign_in_count %>: <%= @user.sign_in_count %></li>
+              <li class="list-group-item"><%= h User, :last_sign_in_at %>: <%= @user.last_sign_in_at %></li>
+              <li class="list-group-item"><%= h User, :current_sign_in_ip %>: <%= @user.current_sign_in_ip %></li>
+              <li class="list-group-item"><%= h User, :last_sign_in_ip %>: <%= @user.last_sign_in_ip %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="suggestions" role="tabpanel" aria-labelledby="suggestions-tab">
+      <%= render 'profile/basics/suggestions', suggestions: @user.suggestions %>
+    </div>
+    <div class="tab-pane fade" id="flips" role="tabpanel" aria-labelledby="flips-tab">
+      <%= render 'profile/basics/flips', works: @user.flipped_works %>
+    </div>
+  </div>
 </div>
-<hr>
-<br>

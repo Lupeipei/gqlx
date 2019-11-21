@@ -1,37 +1,33 @@
 class Backend::QinPoetriesController < Backend::BaseController
+  load_and_authorize_resource
+
   def index
     @q = QinPoetry.ransack(params[:q])
     @qin_poetrys = @q.result.page(params[:page])
   end
 
   def new
-    @qin_poetry = QinPoetry.new
   end
 
   def create
-    @qin_poetry = QinPoetry.new(qin_poetry_params)
     @qin_poetry.save
 
     respond_with @qin_poetry, location: -> { [ :backend, QinPoetry ] }
   end
 
   def show
-    @qin_poetry = QinPoetry.find(params[:id])
   end
 
   def edit
-    @qin_poetry = QinPoetry.find(params[:id])
   end
 
   def update
-    @qin_poetry = QinPoetry.find(params[:id])
     @qin_poetry.update(qin_poetry_params)
 
     respond_with @qin_poetry, location: -> { [ :backend, @qin_poetry ] }
   end
 
   def destroy
-    @qin_poetry = QinPoetry.find(params[:id])
     @qin_poetry.destroy
 
     respond_with @qin_poetry, location: -> { [ :backend, QinPoetry ] }

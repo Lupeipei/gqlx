@@ -16,7 +16,7 @@
 #  nickname               :string
 #  avatar                 :string
 #  type                   :string
-#  superadmin             :boolean
+#  superadmin             :boolean          default("false")
 #
 
 class User < ApplicationRecord
@@ -30,7 +30,7 @@ class User < ApplicationRecord
   before_save :ensure_nickname, only: :create
   before_save :default_visitor, only: :create
   has_many :flips, dependent: :destroy
-  has_many :flipped_works, class_name: Work.to_s, through: :flips
+  has_many :flipped_works, through: :flips, source: :work
   has_many :suggestions, dependent: :destroy
 
   attr_writer :current_password

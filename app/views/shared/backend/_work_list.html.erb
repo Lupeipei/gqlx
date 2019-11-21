@@ -2,19 +2,23 @@
   <thead>
   <tr>
   <td><%= sort_link q, :title %></td>
-  <td><%= sort_link q, :category %></td>
+  <td><%= sort_link q, :dynasty %></td>
   <td><%= sort_link q, :author %></td>
   <td>操作</td>
   </tr>
   </thead>
   <% works.each do |work| %>
     <tr>
-    <td><%= link_to work.title, [ :backend, work ] %></td>
-    <td><%= work.category_text %></td>
+    <td>
+      <%= link_to [ :backend, work ] do %>
+        <%= work.title %><span class="badge badge-info ml-2"><%= work.category_text %></span>
+      <% end %>
+    </td>
+    <td><%= work.dynasty %></td>
     <td><%= work.author %></td>
     <td>
-      <%= link_to "编辑", [ :edit, :backend, work ] %>
-      <%= link_to "删除", [ :backend, work ], method: :delete, data: { confirm: "确定删除#{work.title}？"} %>
+      <%= link_to "编辑", [ :edit, :backend, work ] if can? :update, work %>
+      <%= link_to "删除", [ :backend, work ], method: :delete, data: { confirm: "确定删除#{work.title}？"} if can? :destory, work %>
     </td>
     </tr>
   <% end %>

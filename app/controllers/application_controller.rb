@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 protected
   def after_sign_in_path_for(resource)
     if resource.is_a?(Admin)
-      default_url = backend_admins_path
+      default_url = backend_users_path
     else
       default_url = root_path
     end

@@ -1,30 +1,26 @@
 <div class="d-flex flex-column justify-content-center m-5">
   <h2 class="text-center">个人中心</h2>
-
-</div>
-
-<h2 class="mb-5">个人中心</h2>
-
-<ul class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab">基本信息</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="suggestions-tab" data-toggle="tab" href="#suggestions" role="tab">我的建议</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="filps-tab" data-toggle="tab" href="#filps" role="tab">怦然心动</a>
-  </li>
-</ul>
-<hr>
-<div class="tab-content">
-  <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <%= render 'profile', user: @user %>
-  </div>
-  <div class="tab-pane fade" id="suggestions" role="tabpanel" aria-labelledby="suggestions-tab">
-    <%= render 'suggestions', suggestions: @user.suggestions %>
-  </div>
-  <div class="tab-pane fade" id="filps" role="tabpanel" aria-labelledby="filps-tab">
-    <%= render 'flips', flips: @user.flips %>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab">基本信息</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="suggestions-tab" data-toggle="tab" href="#suggestions" role="tab">我的建议</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="flips-tab" data-toggle="tab" href="#flips" role="tab">怦然心动</a>
+    </li>
+  </ul>
+  <hr>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <%= render 'profile', user: @user %>
+    </div>
+    <div class="tab-pane fade" id="suggestions" role="tabpanel" aria-labelledby="suggestions-tab">
+      <%= render 'suggestions', suggestions: @user.suggestions %>
+    </div>
+    <div class="tab-pane fade" id="flips" role="tabpanel" aria-labelledby="flips-tab">
+      <%= render 'flips', works: @user.flipped_works %>
+    </div>
   </div>
 </div>

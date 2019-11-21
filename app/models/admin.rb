@@ -16,7 +16,7 @@
 #  nickname               :string
 #  avatar                 :string
 #  type                   :string
-#  superadmin             :boolean
+#  superadmin             :boolean          default("false")
 #
 
 class Admin < User

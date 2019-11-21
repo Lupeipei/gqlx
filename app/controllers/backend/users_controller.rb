@@ -1,15 +1,14 @@
 class Backend::UsersController < Backend::BaseController
+  load_and_authorize_resource
+
   def index
-    @users = User.all
   end
 
   def new
-    @user = User.new
   end
 
   def create
-    @user = User.new(user_params)
-
+    @user.type = 'Admin'
     if @user.save
       respond_with @user, location: [ :backend, User ]
     else
@@ -18,7 +17,6 @@ class Backend::UsersController < Backend::BaseController
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     respond_with @user, location: [ :backend, User ]
   end

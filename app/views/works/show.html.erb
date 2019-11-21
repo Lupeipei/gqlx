@@ -21,7 +21,7 @@
 <h2 class="category"><%= h Work, :notes %></h2>
 <div class="mx-5">
   <% if @work.notes.empty? %>
-    <h5 class="font-weight-normal">暂无, <%= link_to '我来补充', [ :edit, :backend, @work ] %></h5>
+    <h5 class="font-weight-normal">暂无 <%= link_to '我来补充', [ :edit, :backend, @work ] if can? :update, @work %></h5>
   <% else %>
     <% @work.notes.each do |line| %>
       <p><%= line %></p>
@@ -32,7 +32,7 @@
 <h2 class="category"><%= h Work, :translate %></h2>
 <div class="mx-5">
   <% if @work.translate.empty? %>
-    <h5 class="font-weight-normal">暂无, <%= link_to '我来补充', [ :edit, :backend, @work ] %></h5>
+    <h5 class="font-weight-normal">暂无 <%= link_to '我来补充', [ :edit, :backend, @work ] if can? :update, @work %></h5>
   <% else %>
     <% @work.translate.each do |line| %>
       <p><%= line %></p>

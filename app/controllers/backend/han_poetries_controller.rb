@@ -1,37 +1,33 @@
 class Backend::HanPoetriesController < Backend::BaseController
+  load_and_authorize_resource
+
   def index
     @q = HanPoetry.ransack(params[:q])
     @han_poetrys = @q.result.page(params[:page])
   end
 
   def new
-    @han_poetry = HanPoetry.new
   end
 
   def create
-    @han_poetry = HanPoetry.new(han_poetry_params)
     @han_poetry.save
 
     respond_with @han_poetry, location: -> { [ :backend, HanPoetry ] }
   end
 
   def show
-    @han_poetry = HanPoetry.find(params[:id])
   end
 
   def edit
-    @han_poetry = HanPoetry.find(params[:id])
   end
 
   def update
-    @han_poetry = HanPoetry.find(params[:id])
     @han_poetry.update(han_poetry_params)
 
     respond_with @han_poetry, location: -> { [ :backend, @han_poetry ] }
   end
 
   def destroy
-    @han_poetry = HanPoetry.find(params[:id])
     @han_poetry.destroy
 
     respond_with @han_poetry, location: -> { [ :backend, HanPoetry ] }
