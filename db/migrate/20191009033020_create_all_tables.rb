@@ -1,5 +1,31 @@
-class AddDeviseToUsers < ActiveRecord::Migration[5.2]
+class CreateWorks < ActiveRecord::Migration[5.2]
   def change
+    create_table :works, force: :cascade do |t|
+      t.string :title
+      t.string :dynasty
+      t.string :author
+      t.string :prelude
+      t.text :content, default: [], array: true
+      t.string :translate, default: [], array: true
+      t.string :translate_res, default: [], array: true
+      t.string :notes, default: [], array: true
+      t.string :type
+      t.string :category
+      t.timestamps
+    end
+
+    create_table :entries do |t|
+      t.text :content
+      t.belongs_to :work
+      t.timestamps
+    end
+
+    create_table :plants do |t|
+      t.string :fragment
+      t.belongs_to :work
+      t.timestamps
+    end
+
     create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
@@ -37,12 +63,26 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       t.string :nickname
       t.string :avatar
       t.string :type
-      t.boolean :superadmin
+      t.boolean :superadmin, default: false
     end
 
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
+
+    create_table :suggestions do |t|
+      t.string :email
+      t.text :comments
+      t.belongs_to :work
+      t.belongs_to :user
+      t.timestamps
+    end
+
+    create_table :flips do |t|
+      t.belongs_to :work
+      t.belongs_to :user
+      t.timestamps
+    end
   end
 end
