@@ -22,4 +22,14 @@ protected
   end
   alias h human
   helper_method :human, :h
+
+  def store_location
+    session[:return_to] = request.get? ? request.request_uri : request.referer
+  end
+
+  def back_url(default = root_url)
+    session.delete(:return_to) || request.referer || default
+  end
+
+  helper_method :back_url
 end
