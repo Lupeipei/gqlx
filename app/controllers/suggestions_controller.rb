@@ -1,8 +1,9 @@
 class SuggestionsController < ApplicationController
+  load_and_authorize_resource :work
+  load_and_authorize_resource through: :work
+
   def create
-    @work = Work.find(params[:work_id])
-    @suggestion.user_id = current_user if current_user
-    @suggestion = @work.suggestions.new(suggestion_params)
+    @suggestion.user_id = current_user.id if current_user
 
     if @suggestion.save
       flash[:notice] = "提交成功!"

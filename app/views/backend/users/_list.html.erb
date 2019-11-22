@@ -6,6 +6,7 @@
         <tr>
         <td><%= h User, :nickname %></td>
         <td><%= h User, :email %></td>
+        <td><%= h User, :last_sign_in_at %></td>
         <td><%= I18n.t 'pages.action', scope: :views %></td>
         </tr>
         </thead>
@@ -13,6 +14,7 @@
           <tr>
           <td><%= link_to user.nickname, backend_user_url(user) %></td>
           <td><%= user.email %></td>
+          <td><%=l user.last_sign_in_at, format: :long %></td>
           <td>
             <%= link_to "删除", backend_user_url(user), method: :delete, data: { confirm: "确定删除 #{user.nickname}？"} if can?(:destroy, user) %>
           </td>

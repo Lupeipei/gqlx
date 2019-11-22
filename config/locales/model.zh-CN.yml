@@ -24,6 +24,8 @@ zh-CN:
         translate: 译文
         translate_res: 参考
         notes: 注释
+        created_at: 创建时间
+        updated_at: 更新时间
       song_poem:
         title: 词牌名
       user:
@@ -38,5 +40,7 @@ zh-CN:
       suggestion:
         email: 邮箱
         comments: 详情
+        created_at: 创建时间
+        updated_at: 更新时间
       entry:
         content: 段落

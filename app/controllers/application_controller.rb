@@ -24,7 +24,7 @@ protected
   helper_method :human, :h
 
   def store_location
-    session[:return_to] = request.get? ? request.request_uri : request.referer
+    session[:return_to] = request.get? ? request.url : request.referer
   end
 
   def back_url(default = root_url)

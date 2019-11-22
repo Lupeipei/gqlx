@@ -4,6 +4,8 @@
   <td><%= sort_link q, :title %></td>
   <td><%= sort_link q, :dynasty %></td>
   <td><%= sort_link q, :author %></td>
+  <td><%= sort_link q, :created_at %></td>
+  <td><%= sort_link q, :updated_at %></td>
   <td>操作</td>
   </tr>
   </thead>
@@ -16,6 +18,8 @@
     </td>
     <td><%= work.dynasty %></td>
     <td><%= work.author %></td>
+    <td><%=l work.created_at, format: :short %></td>
+    <td><%=l work.updated_at, format: :short %></td>
     <td>
       <%= link_to "编辑", [ :edit, :backend, work ] if can? :update, work %>
       <%= link_to "删除", [ :backend, work ], method: :delete, data: { confirm: "确定删除#{work.title}？"} if can? :destory, work %>

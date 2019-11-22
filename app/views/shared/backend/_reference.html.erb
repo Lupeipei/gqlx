@@ -40,7 +40,8 @@
         <div class="card-body pl-0">
           <blockquote class="blockquote mb-0">
             <p><%= suggestion.comments %></p>
-            <footer class="blockquote-footer float-right"><%= suggestion.email %></footer>
+            <% info = suggestion.user.present? ? suggestion.user.nickname : suggestion.email %>
+            <footer class="blockquote-footer float-right"><%= info %> <%=l suggestion.created_at, format: :long%></footer>
           </blockquote>
         </div>
       </div>
