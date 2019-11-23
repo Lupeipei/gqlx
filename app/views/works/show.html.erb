@@ -1,65 +1,73 @@
 <%#= link_to '返回 <<', back_url(works_url), class: 'd-block m-3 ml-5' %>
 
 <div class="container">
-  <div class="row my-3">
-    <div class="col-md-8 offset-md-2 d-flex flex-column align-items-center">
-      <h1 class="text-success"><%= @work.title %></h1>
-      <br>
-      <div class="text-muted"><%= @work.dynasty %> - <%= @work.author %></div>
-      <br>
-      <% if @work.prelude.present? %>
-        <div class="mx-5"><%= @work.prelude %></div>
+  <div class="row my-5">
+    <div class="col-md-8 offset-md-2">
+      <div class="d-flex flex-column align-items-center">
+        <div class="d-flex align-items-end">
+          <h1 class="text-success"><%= @work.title %></h1>
+          <div id="work-flip-<%= @work.id %>">
+            <%= render 'shared/flip', work: @work %>
+          </div>
+        </div>
         <br>
-      <% end %>
-      <div class="font-weight-normal">
-      <% @work.content.each do |line| %>
-        <p class="poem-body"><%= line %></p>
-      <% end %>
+        <div class="text-muted"><%= @work.dynasty %> - <%= @work.author %></div>
+        <br>
+        <% if @work.prelude.present? %>
+          <div class="mx-5"><%= @work.prelude %></div>
+          <br>
+        <% end %>
+        <div class="font-weight-normal">
+        <% @work.content.each do |line| %>
+          <p class="poem-body"><%= line %></p>
+        <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<h2 class="category"><%= h Work, :notes %></h2>
-<div class="mx-5">
-  <% if @work.notes.empty? %>
-    <h5 class="font-weight-normal">暂无 <%= link_to '我来补充', [ :edit, :backend, @work ] if can? :update, @work %></h5>
-  <% else %>
-    <% @work.notes.each do |line| %>
-      <p><%= line %></p>
-    <% end %>
-  <% end %>
-</div>
-
-<h2 class="category"><%= h Work, :translate %></h2>
-<div class="mx-5">
-  <% if @work.translate.empty? %>
-    <h5 class="font-weight-normal">暂无 <%= link_to '我来补充', [ :edit, :backend, @work ] if can? :update, @work %></h5>
-  <% else %>
-    <% @work.translate.each do |line| %>
-      <p><%= line %></p>
-    <% end %>
-  <% end %>
-</div>
-
-<% if @work.translate_res.present? %>
-  <h2 class="category"><%= h Work, :translate_res %></h2>
+  <hr>
+  <h2 class="category"><%= h Work, :notes %></h2>
   <div class="mx-5">
-    <% @work.translate_res.each do |line| %>
-      <div class="small text-muted"><%= line %></div>
+    <% if @work.notes.empty? %>
+      <h5 class="font-weight-normal">暂无 <%= link_to '我来补充', [ :edit, :backend, @work ] if can? :update, @work %></h5>
+    <% else %>
+      <% @work.notes.each do |line| %>
+        <p><%= line %></p>
+      <% end %>
     <% end %>
   </div>
-<% end %>
 
-<h2 class="category">我要完善</h2>
-<div class="mx-5">
-  <div class="row">
-    <div class="col-md-4">
-      <%= simple_form_for(@suggestion, as: :suggestion, url: work_suggestions_path(@work), method: :post) do |f| %>
-        <%= f.input :email, as: :email %>
-        <%= f.input :comments, as: :text, label: false, placeholder: "#{@work.title}......" %>
-        <%= f.submit '提交', class: "btn btn-success float-right" %>
+  <h2 class="category"><%= h Work, :translate %></h2>
+  <div class="mx-5">
+    <% if @work.translate.empty? %>
+      <h5 class="font-weight-normal">暂无 <%= link_to '我来补充', [ :edit, :backend, @work ] if can? :update, @work %></h5>
+    <% else %>
+      <% @work.translate.each do |line| %>
+        <p><%= line %></p>
       <% end %>
+    <% end %>
+  </div>
+
+  <% if @work.translate_res.present? %>
+    <h2 class="category"><%= h Work, :translate_res %></h2>
+    <div class="mx-5">
+      <% @work.translate_res.each do |line| %>
+        <div class="small text-muted"><%= line %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <h2 class="category">我要完善</h2>
+  <div class="mx-5">
+    <div class="row">
+      <div class="col-md-12">
+        <%= simple_form_for(@suggestion, as: :suggestion, url: work_suggestions_path(@work), method: :post) do |f| %>
+          <%= f.input :email, as: :email %>
+          <%= f.input :comments, as: :text, label: false, placeholder: "#{@work.title}......" %>
+          <%= f.submit '提交', class: "btn btn-success float-right" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

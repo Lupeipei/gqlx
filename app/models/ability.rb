@@ -15,7 +15,7 @@ class Ability
   end
 
   def apply_anonymous_permissions
-    can :read, Work
+    can [ :read, :dongp, :jiax ], Work
     can [ :read, :create ], Suggestion
     can [ :read ], Flip
   end

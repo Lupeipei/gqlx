@@ -32,6 +32,10 @@
   border-radius: 0.25rem;
   .card {
     height: 250px;
+
+    .card-text:last-child {
+      overflow: scroll;
+    }
   }
 }
 

@@ -1,0 +1,13 @@
+<% suggestions.each do |suggestion| %>
+  <div class="card mb-3">
+    <div class="card-header">
+      <%= link_to suggestion.work.title, work_url(suggestion.work_id), target: :blank %>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p><%= suggestion.comments %>.</p>
+        <footer class="blockquote-footer float-right"><%=l suggestion.created_at, format: :long%></footer>
+      </blockquote>
+    </div>
+  </div>
+<% end %>

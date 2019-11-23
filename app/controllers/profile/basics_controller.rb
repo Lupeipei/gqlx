@@ -3,7 +3,8 @@ class Profile::BasicsController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
-    # @suggestions = @user.suggestions
+    @suggests = @user.suggestions
+    @flipped_works = @user.flipped_works.includes(:flips)
   end
 
   def update
