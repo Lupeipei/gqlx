@@ -31,7 +31,6 @@ $(function() {
 
   $(document).on({
     'ajax:before': function(event) {
-      console.log("ajax")
       const $element = $(event.target)
       if ($element.data('type') !== 'xhrml') { return }
 
@@ -40,12 +39,15 @@ $(function() {
     },
     'ajax:success': function(event, data) {
       const $element = $(event.target)
-      console.log($element)
       handleResponse($element, data)
     },
     'ajax:error': function(event, xhr) {
-      const $element = $(event.target)
-      handleResponse($element, xhr.responseText)
+      if (xhr.status == 401) {
+        window.location = "/users/sign_in"
+      } else {
+        const $element = $(event.target)
+        handleResponse($element, xhr.responseText)
+      }
     }
   })
 })

@@ -35,8 +35,6 @@ protected
   helper_method :back_url
 
   def adjust_format_for_xhr_html
-    return if request.fullpath == '/users/sign_in'
-
     request.format = :xhrml if request.format.to_sym == :html && (request.xhr? || params[:xhr])
   end
 end
