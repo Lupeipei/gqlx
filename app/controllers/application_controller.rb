@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   respond_to :html
 
   before_action { @q = Work.includes(:entry).ransack(params[:q]) }
+  before_action :adjust_format_for_xhr_html
 
 protected
   def after_sign_in_path_for(resource)
@@ -32,4 +33,10 @@ protected
   end
 
   helper_method :back_url
+
+  def adjust_format_for_xhr_html
+    return if request.fullpath == '/users/sign_in'
+
+    request.format = :xhrml if request.format.to_sym == :html && (request.xhr? || params[:xhr])
+  end
 end

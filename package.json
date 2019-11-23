@@ -6,6 +6,7 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "jquery-ujs": "^1.2.2",
+    "lodash": "^4.17.15",
     "popper.js": "^1.15.0",
     "turbolinks": "^5.2.0"
   },

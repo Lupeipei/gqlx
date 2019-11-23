@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       get :dongp
       get :jiax
     end
+
     resources :suggestions
+    resource :flip
   end
 
   namespace :backend do

@@ -1,0 +1,8 @@
+<% @work = work %>
+<div class="d-flex justify-content-end my-2 mx-3">
+  <% if current_user&.flipped(work) %>
+    <%= render file: "flips/show.xhrml" %>
+  <% else %>
+    <%= render file: "flips/new.xhrml" %>
+  <% end %>
+</div>

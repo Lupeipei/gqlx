@@ -50,4 +50,8 @@ class User < ApplicationRecord
   # def password_required?
   #   new_record? || password.present? || password_confirmation.present?
   # end
+
+  def flipped(work)
+    self.flipped_work_ids.include?(work.id)
+  end
 end

@@ -1,0 +1,5 @@
+<% data = { remote: true, type: "xhrml", target: "div" } %>
+<%= link_to work_flip_url(@work), method: :post, data: data do %>
+  <i class="far fa-grin-hearts fa-lg text-muted"></i>
+  <span class="badge badge-pill badge-success ml-1"><%= @work.flips.count %></span>
+<% end %>
