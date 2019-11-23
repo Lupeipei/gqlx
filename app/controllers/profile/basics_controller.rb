@@ -3,20 +3,23 @@ class Profile::BasicsController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
-    @suggests = @user.suggestions
-    @flipped_works = @user.flipped_works.includes(:flips)
   end
 
   def update
     @user = User.find(current_user.id)
     if user_params.values_at(*password_params).any?(&:present?)
-      @user.update_with_password(user_params)
+      if @user.update_with_password(user_params)
+        flash[:notice] = "更新成功！"
+        respond_with @user, action: :show, location: -> { [ :profile, :basic ] }
+      else
+        flash[:alert] = @user.errors.full_messages.join(', ')
+        render :show
+      end
     else
       @user.update(user_params)
       flash[:notice] = "更新成功！"
+      respond_with @user, action: :show, location: -> { [ :profile, :basic ] }
     end
-
-    redirect_to profile_basic_url
   end
 
 protected

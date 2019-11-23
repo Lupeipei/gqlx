@@ -47,9 +47,9 @@ class User < ApplicationRecord
     self.type ||= 'Visitor'
   end
 
-  # def password_required?
-  #   new_record? || password.present? || password_confirmation.present?
-  # end
+  def password_required?
+    new_record? || password.present? || password_confirmation.present?
+  end
 
   def flipped(work)
     self.flipped_work_ids.include?(work.id)

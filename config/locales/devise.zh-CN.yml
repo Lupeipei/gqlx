@@ -145,9 +145,7 @@ zh-CN:
     failure:
       already_authenticated: 您已经登录。
       user:
-        last_attempt: "You have one more attempt before your account is locked."
-        not_found_in_database: "Invalid %{authentication_keys} or password."
-        timeout: "Your session expired. Please sign in again to continue."
+        invalid: "%{authentication_keys}或密码错误。"
         unauthenticated: "继续操作前请注册或者登录."
         unconfirmed: "You have to confirm your email address before continuing."
     sessions:
