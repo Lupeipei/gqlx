@@ -1,7 +1,8 @@
 <% suggestions.each do |suggestion| %>
   <div class="card mb-3">
     <div class="card-header">
-      <%= link_to suggestion.work.title, work_url(suggestion.work_id), target: :blank %>
+      <% url = current_user.is_a?(Admin) ? [ :backend, suggestion.work ] : work_url(suggestion.work) %>
+      <%= link_to suggestion.work.title, url, target: :blank %>
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">

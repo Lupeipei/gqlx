@@ -55,3 +55,11 @@
   // background-image: url('../images/owl-s.png');
   // background-repeat: no-repeat;
 }
+
+.intro {
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

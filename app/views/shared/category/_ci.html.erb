@@ -1,26 +1,26 @@
 <div class="container-fluid">
   <div class="row mx-3">
-    <% poems.each do |poem| %>
+    <% cis.each do |ci| %>
       <div class="col-4 my-3">
         <div class="poems text-center">
           <div class="card card-body border-0">
-            <%= link_to poem.title, work_url(poem.id), class: "card-title text-success h5" %>
-            <small class="card-subtitle mb-2 text-muted"><%= poem.dynasty %> - <%= poem.author %></small>
+            <%= link_to ci.title, work_url(ci.id), class: "card-title text-success h5" %>
+            <small class="card-subtitle mb-2 text-muted"><%= ci.dynasty %> - <%= ci.author %></small>
             <div class="card-text">
-              <% if poem.content.size > 4 %>
-                <% poem.content.first(3).each do |line| %>
+              <% if ci.content.size > 4 %>
+                <% ci.content.first(3).each do |line| %>
                   <p><%= line %></p>
                 <% end %>
                 <p>.........</p>
               <% else %>
-                <% poem.content.each do |line| %>
+                <% ci.content.each do |line| %>
                   <p><%= line %></p>
                 <% end %>
               <% end %>
             </div>
           </div>
-          <div id="work-flip-<%= poem.id %>">
-            <%= render 'shared/flip', work: poem %>
+          <div id="work-flip-<%= ci.id %>">
+            <%= render 'shared/flip', work: ci %>
           </div>
         </div>
       </div>

@@ -4,6 +4,6 @@ class MainController < ApplicationController
 
   def search
     @works = @q.result(distinct: true)
-    # @works = @works_scope.page(params[:page])
+    @works = @works.order('category').page(params[:page])
   end
 end

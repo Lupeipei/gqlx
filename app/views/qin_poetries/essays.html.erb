@@ -1,0 +1,19 @@
+<div class="container-fluid px-3">
+  <%= render 'intro' %>
+
+  <nav>
+    <div class="nav nav-tabs">
+      <%= link_to '诗歌', [ :poetries, :qin_poetries ], class: "nav-item nav-link h3" %>
+      <%= link_to '文集', [ :essays, :qin_poetries ], class: "nav-item nav-link h3 active" %>
+    </div>
+  </nav>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active">
+      <p class="ml-3 mt-3 text-muted">共收录作品 <span class="text-success"><%= @essays.total_count %></span> 篇</p>
+      <%= render "shared/category/essay", essays: @essays %>
+      <br>
+      <%= paginate @essays %>
+    </div>
+  </div>
+</div>

@@ -3,8 +3,7 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
-
-  before_action { @q = Work.includes(:entry).ransack(params[:q]) }
+  before_action { @q = Work.includes(:entry, :flips).ransack(params[:q]) }
   before_action :adjust_format_for_xhr_html
 
 protected

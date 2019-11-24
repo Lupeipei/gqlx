@@ -1,6 +1,5 @@
 class WelcomesController < ApplicationController
   def index
-    # @slogans = Plant.order("RANDOM()").limit(3)
     @works = Work.includes(:flips).without_essays
     @qin_poetrys = @works.where(type: 'QinPoetry').limit(12)
     @han_poetrys = @works.where(type: 'HanPoetry').limit(12)

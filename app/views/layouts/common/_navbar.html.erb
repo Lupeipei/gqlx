@@ -7,6 +7,18 @@
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
+        <%= link_to "先秦", [ :poetries, QinPoetry ], class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "两汉", [ :yuefus, HanPoetry ], class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "唐诗", [ :poetries, TangPoem ], class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "宋词", [ :cis, SongPoem ], class: "nav-link" %>
+      </li>
+      <li class="nav-item">
         <%= link_to "东坡", [ :dongp, :works ], class: "nav-link" %>
       </li>
       <li class="nav-item">

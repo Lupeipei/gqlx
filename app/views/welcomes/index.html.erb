@@ -3,39 +3,39 @@
 <div class="d-flex justify-content-between">
   <h2 class="category"><%= h QinPoetry %></h2>
   <div class="text-center mx-5 my-auto">
-    <%= link_to '查看更多 >>', works_path(type: 'QinPoetry'), class: 'text-secondary' %>
+    <%= link_to '查看更多 >>', [ :poetries, QinPoetry ], class: 'text-secondary' %>
   </div>
 </div>
-<%= render "shared/category/poetry", poems: @qin_poetrys %>
+<%= render "shared/category/poetry", poetries: @qin_poetrys %>
 
 <div class="d-flex justify-content-between">
   <h2 class="category"><%= h HanPoetry %></h2>
   <div class="text-center mx-5 my-auto">
-    <%= link_to '查看更多 >>', works_path(type: 'HanPoetry'), class: 'text-secondary' %>
+    <%= link_to '查看更多 >>', [ :poetries, HanPoetry ], class: 'text-secondary' %>
   </div>
 </div>
-<%= render "shared/category/poetry", poems: @han_poetrys %>
+<%= render "shared/category/poetry", poetries: @han_poetrys %>
 
 <div class="d-flex justify-content-between">
   <h2 class="category"><%= h TangPoem %></h2>
   <div class="text-center mx-5 my-auto">
-    <%= link_to '查看更多 >>', works_path(type: 'TangPoem'), class: 'text-secondary' %>
+    <%= link_to '查看更多 >>', [ :poetries, TangPoem ], class: 'text-secondary' %>
   </div>
 </div>
-<%= render "shared/category/poetry", poems: @tang_poems %>
+<%= render "shared/category/poetry", poetries: @tang_poems %>
 
 <div class="d-flex justify-content-between">
   <h2 class="category"><%= h SongPoem %></h2>
   <div class="text-center mx-5 my-auto">
-    <%= link_to '查看更多 >>', works_path(type: 'SongPoem'), class: 'text-secondary' %>
+    <%= link_to '查看更多 >>', [ :cis, SongPoem ], class: 'text-secondary' %>
   </div>
 </div>
-<%= render "shared/category/ci", poems: @song_poems %>
+<%= render "shared/category/ci", cis: @song_poems %>
 
 <div class="d-flex justify-content-between">
   <h2 class="category"><%= h Article %></h2>
   <div class="text-center mx-5 my-auto">
-    <%= link_to '查看更多 >>', works_path(type: 'Article'), class: 'text-secondary' %>
+    <%= link_to '查看更多 >>', [ :poetries, Article ], class: 'text-secondary' %>
   </div>
 </div>
-<%= render "shared/category/poetry", poems: @articles %>
+<%= render "shared/category/poetry", poetries: @articles %>
