@@ -148,6 +148,8 @@ zh-CN:
         invalid: "%{authentication_keys}或密码错误。"
         unauthenticated: "继续操作前请注册或者登录."
         unconfirmed: "You have to confirm your email address before continuing."
+        not_found_in_database: "%{authentication_keys}或密码错误。"
+        timeout: 登录超时，请重新登录。
     sessions:
       user:
         signed_in: "Welcome Back."

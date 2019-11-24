@@ -3,16 +3,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', passwords: 'users/passwords' }
 
   root to: 'welcomes#index'
-  resources :welcomes, only: [ :index ]
-  resources :works, only: [ :index, :show ] do
-    collection do
-      get :dongp
-      get :jiax
-    end
-
-    resources :suggestions
-    resource :flip
-  end
 
   namespace :backend do
     resources :users
@@ -25,6 +15,21 @@ Rails.application.routes.draw do
 
   namespace :profile do
     resource :basic
+  end
+
+  resources :qin_poetries, :song_poems, :tang_poems, :han_poetries, :articles, :dongps, :jiaxs do
+    collection do
+      get :poetries
+      get :yuefus
+      get :cis
+      get :essays
+    end
+  end
+
+  resources :welcomes, only: [ :index ]
+  resources :works, only: [:show ] do
+    resources :suggestions
+    resource :flip
   end
 
   get 'about', to: 'main#about'
