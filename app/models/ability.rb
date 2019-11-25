@@ -34,6 +34,7 @@ class Ability
     else
       can [ :create, :update ], Work
       can [ :read, :create ], Admin
+      can [ :read, :update ], User
     end
   end
 end
