@@ -36,3 +36,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+/lib/tasks/data_clean.rake
+/lib/tasks/data_import.rake
