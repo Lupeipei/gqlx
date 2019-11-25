@@ -4,7 +4,8 @@
       <div class="col-6 my-3">
         <div class="poems">
           <div class="card card-body border-0">
-            <%= link_to essay.title, work_url(essay.id), class: "card-title text-success h5" %>
+            <% path = local_assigns[:trick] ? url_for(controller: trick, action: 'show', id: essay) : [ essay ] %>
+            <%= link_to essay.title, path, class: "card-title text-success h5" %>
             <small class="card-subtitle mb-2 text-muted"><%= essay.dynasty %> - <%= essay.author %></small>
             <div class="card-text">
               <% if essay.content.size > 4 %>

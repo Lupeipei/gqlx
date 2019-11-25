@@ -1,25 +1,25 @@
 <div class="sidebar">
   <div class="list-group border-0">
-    <%= link_to "#{h User}", [ :backend, User ], class: 'list-group-item list-group-item-action' %>
-    <%= link_to [ :backend, QinPoetry ], class: 'list-group-item list-group-item-action' do %>
+    <%= link_to "#{h User}", [ :backend, User ], class: "list-group-item list-group-item-action#{ controller_path == 'backend/users' ? ' active': ''}" %>
+    <%= link_to [ :backend, QinPoetry ], class: "list-group-item list-group-item-action#{ controller_path == 'backend/qin_poetries' ? ' active': ''}" do %>
       <%= h QinPoetry %>
-      <span class="badge badge-pill badge-light"><%= QinPoetry.count %></span>
+      <span class="badge badge-pill"><%= QinPoetry.count %></span>
     <% end %>
-    <%= link_to [ :backend, HanPoetry ], class: 'list-group-item list-group-item-action' do %>
+    <%= link_to [ :backend, HanPoetry ], class: "list-group-item list-group-item-action#{ controller_path == 'backend/han_poetries' ? ' active': ''}" do %>
       <%= h HanPoetry %>
-      <span class="badge badge-pill badge-light"><%= HanPoetry.count %></span>
+      <span class="badge badge-pill"><%= HanPoetry.count %></span>
     <% end %>
-    <%= link_to [ :backend, TangPoem ], class: 'list-group-item list-group-item-action' do %>
+    <%= link_to [ :backend, TangPoem ], class: "list-group-item list-group-item-action#{ controller_path == 'backend/tang_poems' ? ' active': ''}" do %>
       <%= h TangPoem %>
-      <span class="badge badge-pill badge-light"><%= TangPoem.count %></span>
+      <span class="badge badge-pill"><%= TangPoem.count %></span>
     <% end %>
-    <%= link_to [ :backend, SongPoem ], class: 'list-group-item list-group-item-action' do %>
+    <%= link_to [ :backend, SongPoem ], class: "list-group-item list-group-item-action#{ controller_path == 'backend/song_poems' ? ' active': ''}" do %>
       <%= h SongPoem %>
-      <span class="badge badge-pill badge-light"><%= SongPoem.count %></span>
+      <span class="badge badge-pill"><%= SongPoem.count %></span>
     <% end %>
-    <%= link_to [ :backend, Article ], class: 'list-group-item list-group-item-action' do %>
+    <%= link_to [ :backend, Article ], class: "list-group-item list-group-item-action#{ controller_path == 'backend/articles' ? ' active': ''}" do %>
       <%= h Article %>
-      <span class="badge badge-pill badge-light"><%= Article.count %></span>
+      <span class="badge badge-pill"><%= Article.count %></span>
     <% end %>
   </div>
 </div>

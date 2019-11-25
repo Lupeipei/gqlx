@@ -13,5 +13,10 @@
   .list-group-item {
     border: 0;
     padding-left: 3rem;
+
+    &.active {
+      background-color: white;
+      color: #28a745;
+    }
   }
 }

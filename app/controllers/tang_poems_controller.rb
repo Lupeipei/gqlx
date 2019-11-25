@@ -13,4 +13,11 @@ class TangPoemsController < ApplicationController
   def essays
     @essays = @tang_poems.where(category: :essay).order('title').page(params[:page])
   end
+
+  def show
+    @suggestion = @tang_poem.suggestions.new
+    if current_user
+      @suggestion.email = current_user.email
+    end
+  end
 end

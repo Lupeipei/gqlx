@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   resources :welcomes, only: [ :index ]
-  resources :works, only: [:show ] do
+  resources :works, only: [] do
     resources :suggestions
     resource :flip
   end

@@ -9,7 +9,11 @@ class SuggestionsController < ApplicationController
       flash[:notice] = "提交成功!"
     end
 
-    respond_with @suggestion, location: work_url(@work)
+    if (trick = params[:trick])
+      url = url_for(controller: trick, action: 'show', id: @work)
+    end
+
+    respond_with @suggestion, location: -> { url || [ @work ] }
   end
 
 protected

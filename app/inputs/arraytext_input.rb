@@ -1,5 +1,5 @@
 class ArraytextInput < SimpleForm::Inputs::TextInput
-  def input(wrapper_options = nil)
+  def input(_wrapper_options = nil)
     existing_values = Array(object.public_send(attribute_name))
     template.content_tag(:div) do
       existing_values.each_with_index do |array_el, index|

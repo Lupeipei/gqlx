@@ -17,4 +17,11 @@ class SongPoemsController < ApplicationController
   def cis
     @cis = @song_poems.where(category: :ci).order('title').page(params[:page]).per(24)
   end
+
+  def show
+    @suggestion = @song_poem.suggestions.new
+    if current_user
+      @suggestion.email = current_user.email
+    end
+  end
 end

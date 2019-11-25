@@ -13,4 +13,11 @@ class QinPoetriesController < ApplicationController
   def poetries
     @poetries = @qin_poetries.where(category: [ :poetry, :song ]).order('title').page(params[:page]).per(24)
   end
+
+  def show
+    @suggestion = @qin_poetry.suggestions.new
+    if current_user
+      @suggestion.email = current_user.email
+    end
+  end
 end

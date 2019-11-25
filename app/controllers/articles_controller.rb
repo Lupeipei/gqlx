@@ -17,4 +17,11 @@ class ArticlesController < ApplicationController
   def cis
     @cis = @articles.where(category: :ci).order('title').page(params[:page]).per(24)
   end
+
+  def show
+    @suggestion = @article.suggestions.new
+    if current_user
+      @suggestion.email = current_user.email
+    end
+  end
 end

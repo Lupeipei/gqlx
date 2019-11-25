@@ -12,7 +12,7 @@
   <div class="tab-content">
     <div class="tab-pane fade show active">
       <p class="ml-3 mt-3 text-muted">共收录作品 <span class="text-success"><%= @poetries.total_count %></span> 首</p>
-      <%= render "shared/category/poetry", poetries: @poetries %>
+      <%= render "shared/category/poetry", poetries: @poetries, trick: 'jiaxs' %>
       <br>
       <%= paginate @poetries %>
     </div>

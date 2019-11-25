@@ -17,4 +17,12 @@ class JiaxsController < ApplicationController
   def cis
     @cis = @jiaxs.where(category: :ci).order('title').page(params[:page]).per(24)
   end
+
+  def show
+    @jiax = SongPoem.find(params[:id])
+    @suggestion = @jiax.suggestions.new
+    if current_user
+      @suggestion.email = current_user.email
+    end
+  end
 end

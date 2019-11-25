@@ -5,6 +5,9 @@
 .navbar-nav .nav-item {
   font-size: 1.5rem;
   font-weight: lighter !important;
+  .nav-link.active {
+    font-weight: 300;
+  }
 }
 .carousel-inner {
   img {

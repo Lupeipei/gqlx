@@ -7,25 +7,25 @@
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "先秦", [ :poetries, QinPoetry ], class: "nav-link" %>
+        <%= link_to "先秦", [ :poetries, QinPoetry ], class: "nav-link#{ controller_path == 'qin_poetries' ? ' active': ''}" %>
       </li>
       <li class="nav-item">
-        <%= link_to "两汉", [ :yuefus, HanPoetry ], class: "nav-link" %>
+        <%= link_to "两汉", [ :yuefus, HanPoetry ], class: "nav-link#{ controller_path == 'han_poetries' ? ' active': ''}" %>
       </li>
       <li class="nav-item">
-        <%= link_to "唐诗", [ :poetries, TangPoem ], class: "nav-link" %>
+        <%= link_to "唐诗", [ :poetries, TangPoem ], class: "nav-link#{ controller_path == 'tang_poems' ? ' active': ''}" %>
       </li>
       <li class="nav-item">
-        <%= link_to "宋词", [ :cis, SongPoem ], class: "nav-link" %>
+        <%= link_to "宋词", [ :cis, SongPoem ], class: "nav-link#{ controller_path == 'song_poems' ? ' active': ''}" %>
       </li>
       <li class="nav-item">
-        <%= link_to "东坡", [ :cis, :dongps ], class: "nav-link" %>
+        <%= link_to "东坡", [ :cis, :dongps ], class: "nav-link#{ controller_path == 'dongps' ? ' active': ''}" %>
       </li>
       <li class="nav-item">
-        <%= link_to "稼轩", [ :cis, :jiaxs ], class: "nav-link" %>
+        <%= link_to "稼轩", [ :cis, :jiaxs ], class: "nav-link#{ controller_path == 'jiaxs' ? ' active': ''}" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/about">关于</a>
+        <a class="nav-link<%= current_page?('/about') ? ' active': '' %>" href="/about">关于</a>
       </li>
       <% if current_user && current_user.is_a?(Admin) %>
         <li class="nav-item d-none" id="showBackend">

@@ -17,4 +17,11 @@ class HanPoetriesController < ApplicationController
   def yuefus
     @yuefus = @han_poetries.where(category: :yuefu).order('title').page(params[:page])
   end
+
+  def show
+    @suggestion = @han_poetry.suggestions.new
+    if current_user
+      @suggestion.email = current_user.email
+    end
+  end
 end
