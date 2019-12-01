@@ -9,7 +9,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 3.11'
 gem 'rails-i18n', '~> 5.1'
 gem "cancancan", "3.0.1"
-
+gem 'dotenv-rails', '2.7.5'
 # view
 gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
