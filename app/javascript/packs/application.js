@@ -1,5 +1,4 @@
 import 'bootstrap/dist/js/bootstrap';
-import '../src/fontawesome.jsx';
 import '../src/naughty.jsx';
 import 'jquery-ujs';
 import './style.scss';
