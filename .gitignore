@@ -39,5 +39,5 @@ yarn-debug.log*
 /lib/tasks/data_clean.rake
 /lib/tasks/data_import.rake
 docker-compose.yml
-/.docker
+Dockerfile
 .env
