@@ -297,6 +297,7 @@ DEPENDENCIES
   annotate
   bootsnap (>= 1.1.0)
   cancancan (= 3.0.1)
+  capistrano (= 3.11.0)
   capistrano-passenger
   capistrano-rails (= 1.4.0)
   capybara (>= 2.15)

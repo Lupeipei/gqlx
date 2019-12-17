@@ -43,7 +43,7 @@ gem 'ransack', '2.3.0'
 gem 'rubocop', '0.76'
 
 group :development, :test do
-  # gem 'capistrano','3.11.0'
+  gem 'capistrano','3.11.0'
   # gem 'capistrano-rvm', '0.1.2'
   gem 'capistrano-rails','1.4.0'
   # gem 'capistrano3-puma', '3.1.1'
