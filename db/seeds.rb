@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Admin.where(email: "luciacachn@gmail.com").first_or_initialize! do |u|
+Admin.where(email: "luciacachn@gmail.com").first_or_initialize do |u|
   u.nickname = "lucia"
   u.superadmin = true
   u.password = u.password_confirmation = "123456"
@@ -14,8 +14,8 @@ Admin.where(email: "luciacachn@gmail.com").first_or_initialize! do |u|
 end
 
 admin = Admin.create! do |u|
-  u.email = "tracy835010809@gmail.com"
-  u.nickname = "Tracy"
+  u.email = "bear@gmail.com"
+  u.nickname = "IceBear"
   u.password = u.password_confirmation = "123456"
   u.save
 end

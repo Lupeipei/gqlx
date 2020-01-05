@@ -1,4 +1,4 @@
-class CreateWorks < ActiveRecord::Migration[5.2]
+class CreateAllTables < ActiveRecord::Migration[5.2]
   def change
     create_table :works, force: :cascade do |t|
       t.string :title
