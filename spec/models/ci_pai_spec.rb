@@ -9,7 +9,8 @@
 #  updated_at  :datetime         not null
 #
 
-class CiPai < ApplicationRecord
-  has_many :ci_pai_works, dependent: :destroy
-  has_many :works, through: :ci_pai_works, source: :work
+require 'rails_helper'
+
+RSpec.describe CiPai, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

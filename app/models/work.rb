@@ -18,12 +18,13 @@
 #
 
 class Work < ApplicationRecord
-  enumerize :category, in: [ :essay, :yuefu, :poetry, :ci, :song ]
+  enumerize :category, in: [ :essay, :yuefu, :poetry, :ci, :song, :drama ]
 
   has_one :entry, dependent: :destroy
   has_many :plants
   has_many :suggestions, dependent: :destroy
   has_many :flips, dependent: :destroy
+  has_many :ci_pai_works, dependent: :destroy
 
   validates :title, :dynasty, :author, :content, presence: true
 
