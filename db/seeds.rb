@@ -13,8 +13,8 @@ Admin.where(email: "luciacachn@gmail.com").first_or_initialize do |u|
   u.save
 end
 
-admin = Admin.create! do |u|
-  u.email = "bear@gmail.com"
+Admin.create! do |u|
+  u.email = "test@gmail.com"
   u.nickname = "IceBear"
   u.password = u.password_confirmation = "123456"
   u.save
