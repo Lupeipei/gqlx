@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server "192.255.189.254", user: "deploy", roles: %w{app db web}
+server "122.51.97.192", user: "deploy", roles: %w{app db web}
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
@@ -42,8 +42,8 @@ server "192.255.189.254", user: "deploy", roles: %w{app db web}
 # Global options
 # --------------
 set :ssh_options, {
-  keys: %w(/home/deploy/.ssh/authorized_keys),
-  forward_agent: true,
+  keys: %w(~/Users/lucia/.ssh/id_rsa),
+  forward_agent: false,
   auth_methods: %w(publickey)
 }
 #

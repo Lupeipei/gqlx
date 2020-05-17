@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_07_040157) do
+ActiveRecord::Schema.define(version: 2020_01_07_012901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(version: 2020_01_07_040157) do
     t.string "email"
     t.text "comments"
     t.bigint "work_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_suggestions_on_user_id"
     t.index ["work_id"], name: "index_suggestions_on_work_id"
   end
@@ -89,14 +89,14 @@ ActiveRecord::Schema.define(version: 2020_01_07_040157) do
     t.string "dynasty"
     t.string "author"
     t.string "prelude"
-    t.string "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "notes", default: [], array: true
+    t.text "content", default: [], array: true
     t.string "translate", default: [], array: true
     t.string "translate_res", default: [], array: true
-    t.text "content", default: [], array: true
+    t.string "notes", default: [], array: true
+    t.string "type"
     t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
