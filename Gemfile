@@ -42,9 +42,11 @@ gem 'ransack', '2.3.0'
 # style
 gem 'rubocop', '0.76'
 
+
 group :development, :test do
   gem 'capistrano-rails','1.4.0'
   gem 'capistrano-passenger'
+  gem 'capistrano-rbenv', '~> 2.1'
   gem 'pry', '~> 0.12.2'
   gem "pry-byebug"
   gem 'pry-rails', '~> 0.3.6'

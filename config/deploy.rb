@@ -20,6 +20,9 @@ set :deploy_to, "/home/deploy/gqlx"
 # Default value for :pty is false
 # set :pty, true
 
+# set ruby version from the file
+set :rbenv_ruby, '2.5.8'
+
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", "config/master.key", "config/env"
 

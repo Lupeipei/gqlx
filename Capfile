@@ -33,7 +33,7 @@ require "capistrano/passenger"
 # require 'capistrano/puma/nginx'
 # install_plugin Capistrano::Puma
 # install_plugin Capistrano::Puma::Nginx
-# require "capistrano/rbenv"
+require "capistrano/rbenv"
 # require "capistrano/chruby"
 # require "capistrano/bundler"
 # require "capistrano/rails/assets"
