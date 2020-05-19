@@ -7,4 +7,5 @@ environment.plugins.append('Provide', new webpack.ProvidePlugin({
   Popper: ['popper.js', 'default']
 }))
 
+environment.loaders.delete('nodeModules');
 module.exports = environment
