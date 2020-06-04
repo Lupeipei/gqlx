@@ -8,10 +8,10 @@
     "jquery-ujs": "^1.2.2",
     "lodash": "^4.17.15",
     "popper.js": "^1.15.0",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "@fortawesome/fontawesome-free": "5.13.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.11.2",
     "webpack-dev-server": "3.11.0"
   }
 }
