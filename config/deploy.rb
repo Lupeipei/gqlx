@@ -21,7 +21,12 @@ set :deploy_to, "/home/deploy/gqlx"
 # set :pty, true
 
 # set ruby version from the file
-set :rbenv_ruby, '2.5.8'
+set :rbenv_type, :user
+set :rbenv_ruby, '2.6.6'
+
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles
 
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", "config/master.key", "config/env"
