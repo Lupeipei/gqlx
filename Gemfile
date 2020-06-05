@@ -14,7 +14,7 @@ gem 'jbuilder', '2.9.1'
 gem 'webpacker', '4.0.7'
 gem 'simple_form', '5.0.0'
 gem 'responders', '3.0.0'
-gem 'kaminari', '1.1.1'
+gem 'kaminari', '1.2.1'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
