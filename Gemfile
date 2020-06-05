@@ -2,16 +2,16 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '5.2.3'
 gem 'pg', '1.1.4'
-gem 'puma', '~> 3.12'
-gem 'rails-i18n', '~> 5.1'
-gem "cancancan", "3.0.1"
+gem 'puma', '3.12.4'
+gem 'rails-i18n', '5.1.1'
+gem "cancancan", '3.0.1'
 gem 'dotenv-rails', '2.7.5'
 # view
-gem 'sass-rails', '~> 5.0'
-gem 'jbuilder', '~> 2.5'
-gem 'webpacker', '~> 4.0.7'
+gem 'sass-rails', '5.1.0'
+gem 'jbuilder', '2.9.1'
+gem 'webpacker', '4.0.7'
 gem 'simple_form', '5.0.0'
 gem 'responders', '3.0.0'
 gem 'kaminari', '1.1.1'
@@ -28,7 +28,7 @@ gem 'kaminari', '1.1.1'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '1.4.5', require: false
 
 # model
 gem 'enumerize', '2.3.1'
