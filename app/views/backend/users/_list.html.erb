@@ -14,7 +14,11 @@
           <tr>
           <td><%= link_to user.nickname, backend_user_url(user) %></td>
           <td><%= user.email %></td>
-          <td><%=l user.last_sign_in_at, format: :long %></td>
+          <td>
+            <% if user.last_sign_in_at %>
+              <%=l user.last_sign_in_at, format: :long %>
+            <% end %>
+          </td>
           <td>
             <%= link_to "删除", backend_user_url(user), method: :delete, data: { confirm: "确定删除 #{user.nickname}？"} if can?(:destroy, user) %>
           </td>

@@ -1,24 +1,9 @@
-# README
+## The little Dip
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+19年10月，刷完《苏东坡传》，便想着做个诗词网站，自己看看就好。
 
-Things you may want to cover:
+中间拖拖拉拉，想起来动一动，结果可想而知。
 
-* Ruby version
+时隔半年有余，终于填了这个坑。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+前后台都很简单，还有诸多待办，慢慢来。
