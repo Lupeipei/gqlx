@@ -8,7 +8,6 @@
 
 Admin.where(email: "luciacachn@gmail.com").first_or_initialize do |u|
   u.nickname = "lucia"
-  u.superadmin = true
   u.password = u.password_confirmation = "123456"
   u.save
 end
