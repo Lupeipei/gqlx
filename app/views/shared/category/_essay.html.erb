@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row mx-3">
     <% essays.each do |essay| %>
-      <div class="col-6 my-3">
+      <div class="col-6 col-lg-6 col-md-6 col-sm-12 my-3">
         <div class="poems">
           <div class="card card-body border-0">
             <% path = local_assigns[:trick] ? url_for(controller: trick, action: 'show', id: essay) : [ essay ] %>
