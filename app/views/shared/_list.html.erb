@@ -5,20 +5,20 @@
 
 <% if essays.present? %>
   <h2 class="category">文集</h2>
-  <%= render "shared/category/essay", essays: essays %>
+  <%= render "shared/backend/fliped", likes: essays %>
 <% end %>
 
 <% if poems.present? %>
   <h2 class="category">诗歌</h2>
-  <%= render "shared/category/poetry", poetries: poems %>
+  <%= render "shared/backend/fliped", likes: poems %>
 <% end %>
 
 <% if yuefus.present? %>
   <h2 class="category">乐府</h2>
-  <%= render "shared/category/poetry", poetries: yuefus %>
+  <%= render "shared/backend/fliped", likes: yuefus %>
 <% end %>
 
 <% if cis.present? %>
   <h2 class="category">词集</h2>
-  <%= render "shared/category/ci", cis: cis %>
+  <%= render "shared/backend/fliped", likes: cis %>
 <% end %>

@@ -4,12 +4,11 @@ $(document).on('content:loaded', function(event) {
   $(event.target).find('.array-add-item').each(function() {
     $(this).on('click', e => {
       e.preventDefault()
-      const inputList = this.parentElement.querySelectorAll('.input-group')
-      const lastLineField = inputList[inputList.length - 1]
-      const $cloneField = $(lastLineField).clone()
+      const currentLineField = this.parentElement.parentElement
+      const $cloneField = $(currentLineField).clone()
       $cloneField.find('input').val("")
       $cloneField.find('button').removeAttr('disabled')
-      $(lastLineField).after($cloneField)
+      $(currentLineField).after($cloneField)
     })
   })
 
