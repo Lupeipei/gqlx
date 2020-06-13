@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row mx-3">
+    <% likes.each do |like| %>
+      <div class="col-6 col-lg-6 col-md-6 col-sm-6 my-3">
+        <div class="poems text-center">
+          <div class="card card-body border-0">
+            <% path = local_assigns[:trick] ? url_for(controller: trick, action: 'show', id: like) : [ like ] %>
+            <%= link_to like.title, path, class: "card-title text-success h5" %>
+            <small class="card-subtitle mb-2 text-muted"><%= like.dynasty %> - <%= like.author %></small>
+            <div class="card-text">
+              <% if like.content.size > 4 %>
+                <% like.content.first(3).each do |line| %>
+                  <p><%= line %></p>
+                <% end %>
+                <p>.........</p>
+              <% else %>
+                <% like.content.each do |line| %>
+                  <p><%= line %></p>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <div id="work-flip-<%= like.id %>">
+            <%= render 'shared/flip', work: like %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
