@@ -1,5 +1,5 @@
 <% data = { remote: true, type: "xhrml", target: "div" } %>
-<%= link_to work_flip_url(@work), method: :delete, data: data do %>
+<%= link_to work_flip_url(@work), method: :delete, class: 'd-flex align-items-center', data: data do %>
   <i class="fas fa-grin-hearts fa-lg text-danger"></i>
   <span class="badge badge-pill badge-success ml-1"><%= @work.flips.count %></span>
 <% end %>
