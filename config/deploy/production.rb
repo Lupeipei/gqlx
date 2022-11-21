@@ -42,7 +42,8 @@ server "122.51.97.192", user: "deploy", roles: %w{app db web}
 # Global options
 # --------------
 set :ssh_options, {
-  keys: %w(/home/deploy/.ssh/authorized_keys),
+  keys: %w(/Users/lucia/.ssh/id_rsa),
+  # keys: %w(/home/deploy/.ssh/authorized_keys),
   forward_agent: false,
   auth_methods: %w(publickey)
 }
