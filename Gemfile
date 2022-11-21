@@ -40,6 +40,9 @@ gem 'ransack', '2.3.0'
 # style
 gem 'rubocop', '0.76'
 
+# deploy
+gem 'ed25519', '1.3.0'
+gem 'bcrypt_pbkdf'
 
 group :development, :test do
   gem 'capistrano-rails','1.4.0'
